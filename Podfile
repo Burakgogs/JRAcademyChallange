@@ -8,7 +8,7 @@ target 'JRAcademyChallange' do
   # Pods for JRAcademyChallange
   pod 'Carbon', '1.0.0-rc.6'
   pod 'SwiftLint', '~> 0.52'
-
+  pod 'Alamofire'
   target 'JRAcademyChallangeTests' do
     inherit! :search_paths
     # Pods for testing
