@@ -1,0 +1,24 @@
+PODS:
+  - Carbon (1.0.0-rc.6):
+    - DifferenceKit/Core (~> 1.1)
+  - DifferenceKit/Core (1.3.0)
+  - SwiftLint (0.52.2)
+
+DEPENDENCIES:
+  - Carbon (= 1.0.0-rc.6)
+  - SwiftLint (~> 0.52)
+
+SPEC REPOS:
+  trunk:
+    - Carbon
+    - DifferenceKit
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Carbon: 84c3402754e682960ef85dd20a2fe44c723701d2
+  DifferenceKit: ab185c4d7f9cef8af3fcf593e5b387fb81e999ca
+  SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
+
+PODFILE CHECKSUM: 2395a929a0503bd00717ee0461de2663f41de09f
+
+COCOAPODS: 1.12.1

@@ -1,0 +1,6 @@
+framework module Pods_JRAcademyChallange_JRAcademyChallangeUITests {
+  umbrella header "Pods-JRAcademyChallange-JRAcademyChallangeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
