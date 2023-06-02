@@ -11,13 +11,15 @@
 		0621E50E0348A697E33A6AD3 /* Pods_JRAcademyChallange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129CF6E4F65F49399563A470 /* Pods_JRAcademyChallange.framework */; };
 		8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9532A2919E900BE3643 /* AppDelegate.swift */; };
 		8E8AF9562A2919E900BE3643 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9552A2919E900BE3643 /* SceneDelegate.swift */; };
-		8E8AF9582A2919E900BE3643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9572A2919E900BE3643 /* ViewController.swift */; };
-		8E8AF95B2A2919E900BE3643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AF9592A2919E900BE3643 /* Main.storyboard */; };
 		8E8AF95D2A2919EB00BE3643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AF95C2A2919EB00BE3643 /* Assets.xcassets */; };
 		8E8AF9602A2919EB00BE3643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AF95E2A2919EB00BE3643 /* LaunchScreen.storyboard */; };
 		8E8AF96B2A2919EB00BE3643 /* JRAcademyChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF96A2A2919EB00BE3643 /* JRAcademyChallangeTests.swift */; };
 		8E8AF9752A2919EB00BE3643 /* JRAcademyChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */; };
 		8E8AF9772A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */; };
+		8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21172A2A92DB00446937 /* GameModel.swift */; };
+		8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21192A2A93AF00446937 /* GameViewModel.swift */; };
+		8EEC211D2A2A9A5900446937 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC211C2A2A9A5900446937 /* GameViewController.swift */; };
+		8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21212A2A9F9100446937 /* AlamofireService.swift */; };
 		D77AE244DFF10FD1E15FC063 /* Pods_JRAcademyChallangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724F92A9E7A7E53BEA37AA97 /* Pods_JRAcademyChallangeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +52,6 @@
 		8E8AF9502A2919E900BE3643 /* JRAcademyChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JRAcademyChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8AF9532A2919E900BE3643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E8AF9552A2919E900BE3643 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8E8AF9572A2919E900BE3643 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8E8AF95A2A2919E900BE3643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E8AF95C2A2919EB00BE3643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E8AF95F2A2919EB00BE3643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E8AF9612A2919EB00BE3643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +60,10 @@
 		8E8AF9702A2919EB00BE3643 /* JRAcademyChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JRAcademyChallangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITests.swift; sourceTree = "<group>"; };
 		8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8EEC21172A2A92DB00446937 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		8EEC21192A2A93AF00446937 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		8EEC211C2A2A9A5900446937 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8EEC21212A2A9F9100446937 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
 		999B2A76B3F0A50F6491C898 /* Pods-JRAcademyChallange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRAcademyChallange.release.xcconfig"; path = "Target Support Files/Pods-JRAcademyChallange/Pods-JRAcademyChallange.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,13 +130,13 @@
 		8E8AF9522A2919E900BE3643 /* JRAcademyChallange */ = {
 			isa = PBXGroup;
 			children = (
-				8E8AF9532A2919E900BE3643 /* AppDelegate.swift */,
-				8E8AF9552A2919E900BE3643 /* SceneDelegate.swift */,
-				8E8AF9572A2919E900BE3643 /* ViewController.swift */,
-				8E8AF9592A2919E900BE3643 /* Main.storyboard */,
-				8E8AF95C2A2919EB00BE3643 /* Assets.xcassets */,
-				8E8AF95E2A2919EB00BE3643 /* LaunchScreen.storyboard */,
-				8E8AF9612A2919EB00BE3643 /* Info.plist */,
+				8EEC211B2A2A980800446937 /* App */,
+				8EEC21132A2A8B6300446937 /* Supporting */,
+				8EEC21122A2A8B5B00446937 /* Resources */,
+				8EEC21162A2A8BEE00446937 /* View */,
+				8EEC210F2A2A8B3000446937 /* Services */,
+				8EEC210E2A2A8B1A00446937 /* ViewModels */,
+				8EEC210C2A2A8B0400446937 /* Models */,
 			);
 			path = JRAcademyChallange;
 			sourceTree = "<group>";
@@ -154,6 +158,64 @@
 			path = JRAcademyChallangeUITests;
 			sourceTree = "<group>";
 		};
+		8EEC210C2A2A8B0400446937 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8EEC21172A2A92DB00446937 /* GameModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8EEC210E2A2A8B1A00446937 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8EEC21192A2A93AF00446937 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8EEC210F2A2A8B3000446937 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8EEC21212A2A9F9100446937 /* AlamofireService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8EEC21122A2A8B5B00446937 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8E8AF95C2A2919EB00BE3643 /* Assets.xcassets */,
+				8E8AF95E2A2919EB00BE3643 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8EEC21132A2A8B6300446937 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				8E8AF9612A2919EB00BE3643 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		8EEC21162A2A8BEE00446937 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8EEC211C2A2A9A5900446937 /* GameViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8EEC211B2A2A980800446937 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8E8AF9532A2919E900BE3643 /* AppDelegate.swift */,
+				8E8AF9552A2919E900BE3643 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		91B5B78F1AEA6258C53DE587 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +226,6 @@
 				2BDE416ECB5A91975B6988B8 /* Pods-JRAcademyChallangeTests.debug.xcconfig */,
 				8743150B00CDD7F40170D0C0 /* Pods-JRAcademyChallangeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,7 +340,6 @@
 			files = (
 				8E8AF9602A2919EB00BE3643 /* LaunchScreen.storyboard in Resources */,
 				8E8AF95D2A2919EB00BE3643 /* Assets.xcassets in Resources */,
-				8E8AF95B2A2919E900BE3643 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,8 +467,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E8AF9582A2919E900BE3643 /* ViewController.swift in Sources */,
+				8EEC211D2A2A9A5900446937 /* GameViewController.swift in Sources */,
+				8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */,
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,
+				8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */,
+				8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */,
 				8E8AF9562A2919E900BE3643 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,14 +509,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8E8AF9592A2919E900BE3643 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8E8AF95A2A2919E900BE3643 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8E8AF95E2A2919EB00BE3643 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -589,22 +644,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XB972FWV5G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JRAcademyChallange/Info.plist;
+				INFOPLIST_FILE = JRAcademyChallange/Supporting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JRAcademyChallange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -618,22 +675,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XB972FWV5G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JRAcademyChallange/Info.plist;
+				INFOPLIST_FILE = JRAcademyChallange/Supporting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JRAcademyChallange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
