@@ -9,19 +9,63 @@ import UIKit
 import SnapKit
 import Carbon
 final class GameViewController: UIViewController {
-
-  let labelTitle: UILabel = UILabel()
-  let navigationBar = UINavigationBar()
-  let searchView = UIView()
-  let searchBar = UISearchBar()
-  let stackView = UIStackView()
-  let tableView = UITableView()
+  private var customTabBarController: MainTabBarController! = MainTabBarController()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
-    configure()
+
+    customTabBarController = MainTabBarController()
+    addChild(customTabBarController)
+    view.addSubview(customTabBarController.view)
+
+    customTabBarController.view.snp.makeConstraints { make in
+        make.edges.equalToSuperview()
+    }
+
+    customTabBarController.didMove(toParent: self)
   }
+
+
+
+  class MainTabBarController: UITabBarController {
+      override func viewDidLoad() {
+          super.viewDidLoad()
+
+          let tabOneVC = TabOneViewController()
+          tabOneVC.tabBarItem = UITabBarItem(title: "Games", image:  UIImage(named: "GameIcon"), tag: 0)
+
+          let tabTwoVC = TabTwoViewController()
+          tabTwoVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "FavoriteIcon"), tag: 1)
+
+          viewControllers = [tabOneVC, tabTwoVC]
+      }
+  }
+  class TabOneViewController: UIViewController {
+    let labelTitle: UILabel = UILabel()
+    let navigationBar = UINavigationBar()
+    let searchView = UIView()
+    let searchBar = UISearchBar()
+    let stackView = UIStackView()
+    let tableView = UITableView()
+    let emptyGame = UILabel()
+
+      override func viewDidLoad() {
+          super.viewDidLoad()
+
+          view.backgroundColor = .white
+
+          let label = UILabel()
+          label.text = "Tab One"
+          label.textAlignment = .center
+          label.font = UIFont.boldSystemFont(ofSize: 24)
+          view.addSubview(label)
+
+          label.snp.makeConstraints { make in
+              make.center.equalToSuperview()
+          }
+        configure()
+      }
 
     func configure() {
       view.addSubview(navigationBar)
@@ -29,6 +73,8 @@ final class GameViewController: UIViewController {
       view.addSubview(stackView)
       stackView.addArrangedSubview(searchBar)
       stackView.addArrangedSubview(tableView)
+      tableView.addSubview(emptyGame)
+
 
 
 
@@ -91,5 +137,42 @@ final class GameViewController: UIViewController {
       }
 
 
+      emptyGame.textColor = .black
+      emptyGame.textAlignment = .center
+      emptyGame.numberOfLines = 0
+      emptyGame.lineBreakMode = .byWordWrapping
+      emptyGame.textColor = .black
+      emptyGame.adjustsFontSizeToFitWidth = true
+      emptyGame.minimumScaleFactor = 0.5
+      emptyGame.baselineAdjustment = .alignCenters
+      emptyGame.text = "No game has been searched."
+      emptyGame.font = UIFont(name: "Roboto-Bold", size: 18)
+
+      emptyGame.snp.makeConstraints{ (make) in
+        make.top.equalTo(tableView).offset(37.5)
+        make.centerX.equalToSuperview()
+
+      }
+
     }
+  }
+
+  class TabTwoViewController: UIViewController {
+      override func viewDidLoad() {
+          super.viewDidLoad()
+
+          view.backgroundColor = .white
+
+          let label = UILabel()
+          label.text = "Favorites"
+          label.textAlignment = .center
+          label.font = UIFont.boldSystemFont(ofSize: 24)
+          view.addSubview(label)
+
+          label.snp.makeConstraints { make in
+              make.center.equalToSuperview()
+          }
+      }
+  }
+
 }
