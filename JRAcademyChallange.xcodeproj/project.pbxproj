@@ -16,10 +16,15 @@
 		8E8AF96B2A2919EB00BE3643 /* JRAcademyChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF96A2A2919EB00BE3643 /* JRAcademyChallangeTests.swift */; };
 		8E8AF9752A2919EB00BE3643 /* JRAcademyChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */; };
 		8E8AF9772A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */; };
+		8ED5FE482A2B7C9700CF3612 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */; };
+		8ED5FE492A2B7C9700CF3612 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */; };
+		8ED5FE4A2A2B7C9700CF3612 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */; };
+		8ED5FE4C2A2B839E00CF3612 /* deneme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */; };
 		8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21172A2A92DB00446937 /* GameModel.swift */; };
 		8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21192A2A93AF00446937 /* GameViewModel.swift */; };
 		8EEC211D2A2A9A5900446937 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC211C2A2A9A5900446937 /* GameViewController.swift */; };
 		8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21212A2A9F9100446937 /* AlamofireService.swift */; };
+		8EEC21292A2AA9F200446937 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21282A2AA9F200446937 /* HomePageView.swift */; };
 		D77AE244DFF10FD1E15FC063 /* Pods_JRAcademyChallangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724F92A9E7A7E53BEA37AA97 /* Pods_JRAcademyChallangeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,10 +65,15 @@
 		8E8AF9702A2919EB00BE3643 /* JRAcademyChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JRAcademyChallangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITests.swift; sourceTree = "<group>"; };
 		8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = deneme.storyboard; sourceTree = "<group>"; };
 		8EEC21172A2A92DB00446937 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		8EEC21192A2A93AF00446937 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		8EEC211C2A2A9A5900446937 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8EEC21212A2A9F9100446937 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		8EEC21282A2AA9F200446937 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		999B2A76B3F0A50F6491C898 /* Pods-JRAcademyChallange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRAcademyChallange.release.xcconfig"; path = "Target Support Files/Pods-JRAcademyChallange/Pods-JRAcademyChallange.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,12 +141,13 @@
 			isa = PBXGroup;
 			children = (
 				8EEC211B2A2A980800446937 /* App */,
-				8EEC21132A2A8B6300446937 /* Supporting */,
-				8EEC21122A2A8B5B00446937 /* Resources */,
-				8EEC21162A2A8BEE00446937 /* View */,
-				8EEC210F2A2A8B3000446937 /* Services */,
-				8EEC210E2A2A8B1A00446937 /* ViewModels */,
 				8EEC210C2A2A8B0400446937 /* Models */,
+				8EEC21122A2A8B5B00446937 /* Resources */,
+				8EEC210F2A2A8B3000446937 /* Services */,
+				8EEC21132A2A8B6300446937 /* Supporting */,
+				8EEC21162A2A8BEE00446937 /* ViewController */,
+				8EEC210E2A2A8B1A00446937 /* ViewModels */,
+				8EEC21272A2AA9D100446937 /* Views */,
 			);
 			path = JRAcademyChallange;
 			sourceTree = "<group>";
@@ -156,6 +167,16 @@
 				8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */,
 			);
 			path = JRAcademyChallangeUITests;
+			sourceTree = "<group>";
+		};
+		8ED5FE442A2B7C5B00CF3612 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */,
+				8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */,
+				8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		8EEC210C2A2A8B0400446937 /* Models */ = {
@@ -185,6 +206,7 @@
 		8EEC21122A2A8B5B00446937 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8ED5FE442A2B7C5B00CF3612 /* Font */,
 				8E8AF95C2A2919EB00BE3643 /* Assets.xcassets */,
 				8E8AF95E2A2919EB00BE3643 /* LaunchScreen.storyboard */,
 			);
@@ -199,12 +221,12 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
-		8EEC21162A2A8BEE00446937 /* View */ = {
+		8EEC21162A2A8BEE00446937 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				8EEC211C2A2A9A5900446937 /* GameViewController.swift */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8EEC211B2A2A980800446937 /* App */ = {
@@ -214,6 +236,15 @@
 				8E8AF9552A2919E900BE3643 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		8EEC21272A2AA9D100446937 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8EEC21282A2AA9F200446937 /* HomePageView.swift */,
+				8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		91B5B78F1AEA6258C53DE587 /* Pods */ = {
@@ -338,7 +369,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED5FE492A2B7C9700CF3612 /* Roboto-Medium.ttf in Resources */,
 				8E8AF9602A2919EB00BE3643 /* LaunchScreen.storyboard in Resources */,
+				8ED5FE4A2A2B7C9700CF3612 /* Roboto-Bold.ttf in Resources */,
+				8ED5FE482A2B7C9700CF3612 /* Roboto-MediumItalic.ttf in Resources */,
+				8ED5FE4C2A2B839E00CF3612 /* deneme.storyboard in Resources */,
 				8E8AF95D2A2919EB00BE3643 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +507,7 @@
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,
 				8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */,
 				8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */,
+				8EEC21292A2AA9F200446937 /* HomePageView.swift in Sources */,
 				8E8AF9562A2919E900BE3643 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
