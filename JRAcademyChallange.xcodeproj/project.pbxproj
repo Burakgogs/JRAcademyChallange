@@ -22,7 +22,7 @@
 		8ED5FE4C2A2B839E00CF3612 /* deneme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */; };
 		8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21172A2A92DB00446937 /* GameModel.swift */; };
 		8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21192A2A93AF00446937 /* GameViewModel.swift */; };
-		8EEC211D2A2A9A5900446937 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC211C2A2A9A5900446937 /* GameViewController.swift */; };
+		8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC211C2A2A9A5900446937 /* MainViewController.swift */; };
 		8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21212A2A9F9100446937 /* AlamofireService.swift */; };
 		8EEC21292A2AA9F200446937 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21282A2AA9F200446937 /* HomePageView.swift */; };
 		D77AE244DFF10FD1E15FC063 /* Pods_JRAcademyChallangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724F92A9E7A7E53BEA37AA97 /* Pods_JRAcademyChallangeTests.framework */; };
@@ -71,7 +71,7 @@
 		8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = deneme.storyboard; sourceTree = "<group>"; };
 		8EEC21172A2A92DB00446937 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		8EEC21192A2A93AF00446937 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		8EEC211C2A2A9A5900446937 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8EEC211C2A2A9A5900446937 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8EEC21212A2A9F9100446937 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
 		8EEC21282A2AA9F200446937 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		999B2A76B3F0A50F6491C898 /* Pods-JRAcademyChallange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRAcademyChallange.release.xcconfig"; path = "Target Support Files/Pods-JRAcademyChallange/Pods-JRAcademyChallange.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		8EEC21162A2A8BEE00446937 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8EEC211C2A2A9A5900446937 /* GameViewController.swift */,
+				8EEC211C2A2A9A5900446937 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -502,7 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EEC211D2A2A9A5900446937 /* GameViewController.swift in Sources */,
+				8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */,
 				8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */,
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,
 				8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */,

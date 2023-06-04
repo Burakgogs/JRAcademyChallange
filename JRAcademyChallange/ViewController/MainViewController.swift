@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import Carbon
-final class GameViewController: UIViewController {
+final class MainViewController: UIViewController {
   private var customTabBarController: MainTabBarController! = MainTabBarController()
 
   override func viewDidLoad() {
@@ -179,7 +179,7 @@ final class GameViewController: UIViewController {
       view.addSubview(navigationBar)
       navigationBar.addSubview(labelTitle)
       view.addSubview(stackView)
-     
+
       stackView.addArrangedSubview(tableView)
       tableView.addSubview(emptyFavorite)
 
@@ -230,7 +230,6 @@ final class GameViewController: UIViewController {
         make.leading.equalToSuperview()
         make.trailing.equalToSuperview()
       }
-
 
 
 
