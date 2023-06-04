@@ -19,7 +19,8 @@
 		8ED5FE482A2B7C9700CF3612 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */; };
 		8ED5FE492A2B7C9700CF3612 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */; };
 		8ED5FE4A2A2B7C9700CF3612 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */; };
-		8ED5FE4C2A2B839E00CF3612 /* deneme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */; };
+		8ED5FE5E2A2C0D4B00CF3612 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5FE5D2A2C0D4B00CF3612 /* GameViewController.swift */; };
+		8ED5FE602A2C0DA300CF3612 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5FE5F2A2C0DA300CF3612 /* FavoritesViewController.swift */; };
 		8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21172A2A92DB00446937 /* GameModel.swift */; };
 		8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21192A2A93AF00446937 /* GameViewModel.swift */; };
 		8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC211C2A2A9A5900446937 /* MainViewController.swift */; };
@@ -68,7 +69,8 @@
 		8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = deneme.storyboard; sourceTree = "<group>"; };
+		8ED5FE5D2A2C0D4B00CF3612 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8ED5FE5F2A2C0DA300CF3612 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8EEC21172A2A92DB00446937 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		8EEC21192A2A93AF00446937 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		8EEC211C2A2A9A5900446937 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				8EEC211C2A2A9A5900446937 /* MainViewController.swift */,
+				8ED5FE5D2A2C0D4B00CF3612 /* GameViewController.swift */,
+				8ED5FE5F2A2C0DA300CF3612 /* FavoritesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				8EEC21282A2AA9F200446937 /* HomePageView.swift */,
-				8ED5FE4B2A2B839E00CF3612 /* deneme.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,7 +376,6 @@
 				8E8AF9602A2919EB00BE3643 /* LaunchScreen.storyboard in Resources */,
 				8ED5FE4A2A2B7C9700CF3612 /* Roboto-Bold.ttf in Resources */,
 				8ED5FE482A2B7C9700CF3612 /* Roboto-MediumItalic.ttf in Resources */,
-				8ED5FE4C2A2B839E00CF3612 /* deneme.storyboard in Resources */,
 				8E8AF95D2A2919EB00BE3643 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,9 +505,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */,
+				8ED5FE602A2C0DA300CF3612 /* FavoritesViewController.swift in Sources */,
 				8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */,
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,
 				8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */,
+				8ED5FE5E2A2C0D4B00CF3612 /* GameViewController.swift in Sources */,
 				8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */,
 				8EEC21292A2AA9F200446937 /* HomePageView.swift in Sources */,
 				8E8AF9562A2919E900BE3643 /* SceneDelegate.swift in Sources */,
