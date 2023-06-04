@@ -6,7 +6,15 @@
 //
 import UIKit
 import Foundation
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameViewModelDelegate {
+  func didFetchGames(games: [Game]) {
+    for game in games {
+      print(game.name ?? "")
+      print(game.released ?? "")
+      print(game.backgroundImage ?? "")
+      print(game.rating)
+    }
+  }
   let labelTitle: UILabel = UILabel()
   let navigationBar = UINavigationBar()
 
@@ -14,6 +22,7 @@ class GameViewController: UIViewController {
   let stackView = UIStackView()
   let tableView = UITableView()
   let emptyGame = UILabel()
+  var viewModel: GameViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +38,26 @@ class GameViewController: UIViewController {
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+      viewModel = GameViewModel()
+             viewModel.delegate = self
+             viewModel.fetchGames()
       configure()
     }
 
+//  extension GameViewController: UITableViewDelegate, UITableViewDataSource {
+//      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//          return viewModel.games.count
+//      }
+//
+//      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//          let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
+//
+//          let game = viewModel.games[indexPath.row]
+//          cell.textLabel?.text = game.name
+//          // Configure other cell properties
+//
+//          return cell
+//      }
   func configure() {
     view.addSubview(navigationBar)
     navigationBar.addSubview(labelTitle)

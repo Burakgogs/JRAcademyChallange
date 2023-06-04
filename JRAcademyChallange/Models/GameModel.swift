@@ -28,3 +28,7 @@ struct Game: Codable, Identifiable {
 struct NetworkError: Error {
   let initialError: AFError
 }
+
+struct GameResponse: Codable {
+    let results: [Game]
+}

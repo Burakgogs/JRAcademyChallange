@@ -25,7 +25,7 @@
 		8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21192A2A93AF00446937 /* GameViewModel.swift */; };
 		8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC211C2A2A9A5900446937 /* MainViewController.swift */; };
 		8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21212A2A9F9100446937 /* AlamofireService.swift */; };
-		8EEC21292A2AA9F200446937 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21282A2AA9F200446937 /* HomePageView.swift */; };
+		8EEC21292A2AA9F200446937 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21282A2AA9F200446937 /* GameView.swift */; };
 		D77AE244DFF10FD1E15FC063 /* Pods_JRAcademyChallangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724F92A9E7A7E53BEA37AA97 /* Pods_JRAcademyChallangeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +75,7 @@
 		8EEC21192A2A93AF00446937 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		8EEC211C2A2A9A5900446937 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8EEC21212A2A9F9100446937 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
-		8EEC21282A2AA9F200446937 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		8EEC21282A2AA9F200446937 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		999B2A76B3F0A50F6491C898 /* Pods-JRAcademyChallange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRAcademyChallange.release.xcconfig"; path = "Target Support Files/Pods-JRAcademyChallange/Pods-JRAcademyChallange.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,7 +245,7 @@
 		8EEC21272A2AA9D100446937 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8EEC21282A2AA9F200446937 /* HomePageView.swift */,
+				8EEC21282A2AA9F200446937 /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 				8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */,
 				8ED5FE5E2A2C0D4B00CF3612 /* GameViewController.swift in Sources */,
 				8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */,
-				8EEC21292A2AA9F200446937 /* HomePageView.swift in Sources */,
+				8EEC21292A2AA9F200446937 /* GameView.swift in Sources */,
 				8E8AF9562A2919E900BE3643 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
