@@ -11,16 +11,16 @@ import Alamofire
 struct Game: Codable, Identifiable {
     let id: Int
     let name: String
-    let released: String?
-    let backgroundImage: String?
-    let rating: Double
+    let genres: [Genre]?
+    let gameImage: String
+    let metacritic: Int
 
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case released
-        case backgroundImage = "background_image"
-        case rating
+        case gameImage = "background_image"
+        case metacritic
+        case genres
 
     }
 }
@@ -33,4 +33,12 @@ struct GameResponse: Codable {
 // MARK: - NetworkError
 struct NetworkError: Error {
     let initialError: Error
+}
+// MARK: - Genre
+
+struct Genre: Codable {
+  let name: String?
+  enum CodingKeys: String, CodingKey {
+    case name
+  }
 }

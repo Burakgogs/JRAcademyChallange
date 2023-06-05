@@ -48,7 +48,7 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     var cellNode: [CellNode] = []
 
     for game in viewModel.games {
-      let gameNode = CellNode(GameItem(title: game.name))
+      let gameNode = CellNode(GameItem(game:game))
       cellNode.append(gameNode)
     }
     let gameSection = Section(id: "gameSection", cells: cellNode)
