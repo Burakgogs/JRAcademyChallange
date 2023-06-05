@@ -33,9 +33,7 @@ struct GameItem : IdentifiableComponent{
         }
       }
 
-
     if let url = URL(string: game.gameImage) {
-
       let resizeProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 104, height: 120))
       let imageLoadingOptions: KingfisherOptionsInfo = [
           .processor(resizeProcessor),
@@ -52,7 +50,6 @@ struct GameItem : IdentifiableComponent{
 
   func renderContent() -> GameCell {
     return GameCell()
-
   }
 
 }
@@ -96,7 +93,6 @@ final class GameCell: UIView {
     gameTitle.baselineAdjustment = .alignBaselines
     gameTitle.font = UIFont(name: "Roboto-Bold", size: 20)
 
-
     metacritic.font = UIFont(name: "Roboto-Bold", size: 14)
     metacritic.textColor = .black
 
@@ -106,23 +102,15 @@ final class GameCell: UIView {
     genreTitle.font = UIFont(name: "Roboto-Bold", size: 13)
     genreTitle.textColor = UIColor(hex: "#8A8A8F")
 
-
-
-
   }
 
 
   func setupConstraints(){
 
-
     gameTitle.snp.makeConstraints{ (make) in
       make.top.equalToSuperview().offset(16)
       make.right.equalTo(-16)
       make.left.equalTo(152)
-//      make.bottom.equalTo(metacritic).offset(41)
-
-//            make.centerX.equalToSuperview()
-//            make.centerY.equalToSuperview()
     }
     metacritic.snp.makeConstraints{ (make) in
       make.top.equalToSuperview().offset(84)
@@ -150,9 +138,7 @@ final class GameCell: UIView {
       make.height.equalTo(120)
       make.width.equalTo(104)
     }
-
   }
-  
 }
 extension UIColor {
     convenience init(hex: String) {
@@ -166,7 +152,6 @@ extension UIColor {
             self.init(white: 1.0, alpha: 1.0)
             return
         }
-
         var rgbValue: UInt64 = 0
         Scanner(string: hexString).scanHexInt64(&rgbValue)
 

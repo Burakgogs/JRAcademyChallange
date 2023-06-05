@@ -28,14 +28,12 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         make.leading.trailing.equalTo(0)
         make.height.equalTo(gameView.snp.height)
       }
-
       viewModel = GameViewModel()
       viewModel.delegate = self
       viewModel.fetchGames()
 
       renderer.target = tableView
       configureTableView()
-
     }
 
   private let renderer = Renderer(
@@ -44,9 +42,7 @@ class GameViewController: UIViewController, GameViewModelDelegate {
   )
 
   func render() {
-
     var cellNode: [CellNode] = []
-
     for game in viewModel.games {
       let gameNode = CellNode(GameItem(game:game))
       cellNode.append(gameNode)
@@ -62,7 +58,6 @@ class GameViewController: UIViewController, GameViewModelDelegate {
          make.trailing.equalTo(0)
          make.bottom.equalToSuperview().offset(-83)
      }
-
       tableView.separatorStyle = .none
       tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
 //      tableView.tableFooterView = LoadingFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
