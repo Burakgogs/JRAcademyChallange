@@ -6,144 +6,71 @@
 //
 import UIKit
 import Foundation
+import Carbon
 class GameViewController: UIViewController, GameViewModelDelegate {
-  func didFetchGames(games: [Game]) {
-    for game in games {
-      print(game.name ?? "")
-      print(game.released ?? "")
-      print(game.backgroundImage ?? "")
-      print(game.rating)
-    }
-  }
-  let labelTitle: UILabel = UILabel()
-  let navigationBar = UINavigationBar()
+  private let tableView: UITableView = UITableView()
 
-  let searchBar = UISearchBar()
-  let stackView = UIStackView()
-  let tableView = UITableView()
-  let emptyGame = UILabel()
+
+  func didFetchGames() {
+    render()
+  }
+
   var viewModel: GameViewModel!
+  let gameView = GameView()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
+      view.backgroundColor = .white
 
-        view.backgroundColor = .white
 
-        let label = UILabel()
-        label.text = "Tab One"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 24)
-        view.addSubview(label)
+      view.addSubview(gameView)
+      gameView.snp.makeConstraints { make in
+        make.top.equalTo(0)
+        make.leading.trailing.equalTo(0)
+        make.height.equalTo(gameView.snp.height)
+      }
 
-        label.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
       viewModel = GameViewModel()
-             viewModel.delegate = self
-             viewModel.fetchGames()
-      configure()
-    }
+      viewModel.delegate = self
+      viewModel.fetchGames()
 
-//  extension GameViewController: UITableViewDelegate, UITableViewDataSource {
-//      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//          return viewModel.games.count
-//      }
-//
-//      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//          let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
-//
-//          let game = viewModel.games[indexPath.row]
-//          cell.textLabel?.text = game.name
-//          // Configure other cell properties
-//
-//          return cell
-//      }
-  func configure() {
-    view.addSubview(navigationBar)
-    navigationBar.addSubview(labelTitle)
-    view.addSubview(stackView)
-    stackView.addArrangedSubview(searchBar)
-    stackView.addArrangedSubview(tableView)
-    tableView.addSubview(emptyGame)
-
-
-
-
-    navigationBar.layer.cornerRadius = 0
-    navigationBar.tintColor = .white
-    navigationBar.topItem?.title = "Navigation Bar"
-    navigationBar.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 0.92)
-
-    navigationBar.snp.makeConstraints { make in
-              make.height.equalTo(140)
-              make.width.equalTo(375)
-              make.left.equalToSuperview()
-              make.top.equalToSuperview()
-              make.right.equalToSuperview()
-          }
-
-
-    labelTitle.textColor = .black
-    labelTitle.textAlignment = .left
-    labelTitle.numberOfLines = 0
-    labelTitle.lineBreakMode = .byWordWrapping
-    labelTitle.textColor = .black
-    labelTitle.adjustsFontSizeToFitWidth = true
-    labelTitle.minimumScaleFactor = 0.5
-    labelTitle.baselineAdjustment = .alignCenters
-    labelTitle.text = "Games"
-    labelTitle.font = UIFont(name: "Roboto-Bold", size: 34)
-
-    labelTitle.snp.makeConstraints{ (make) in
-      make.top.equalTo(navigationBar).offset(90)
-      make.left.equalToSuperview().offset(16)
-      make.right.equalToSuperview().offset(250)
-      make.bottom.equalTo(navigationBar).offset(-9)
-      make.height.equalTo(41)
-      make.width.equalTo(109)
+      renderer.target = tableView
+      configureTableView()
 
     }
 
+  private let renderer = Renderer(
+      adapter: UITableViewAdapter(),
+      updater: UITableViewUpdater()
+  )
 
-    stackView.axis = .vertical
-    stackView.contentMode = .scaleToFill
-    stackView.alignment = .fill
-    stackView.spacing = 0
-    stackView.distribution = .fill
-    stackView.backgroundColor = .gray
+  func render() {
+    var sections: [Section] = []
+    var cellNode: [CellNode] = []
 
-    stackView.snp.makeConstraints{ (make) in
-      make.top.equalTo(navigationBar.snp.bottom).offset(2)
-      make.bottom.equalToSuperview().offset(-83)
-      make.leading.equalToSuperview()
-      make.trailing.equalToSuperview()
-    }
+    viewModel.games.forEach { game in
+          cellNode.append(CellNode(id: "gameSection", GameCell(game: game)))
+        }
 
-    searchBar.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.92)
-    searchBar.layer.cornerRadius = 10
-    searchBar.placeholder = "Search for the games"
-    searchBar.searchTextField.font = UIFont.systemFont(ofSize: 17)
-    searchBar.snp.makeConstraints { make in
-
-    }
+    let gameSection = Section(id: "gameSection", cells: cellNode)
+    sections.append(gameSection)
+    renderer.render(sections)
 
 
-    emptyGame.textColor = .black
-    emptyGame.textAlignment = .center
-    emptyGame.numberOfLines = 0
-    emptyGame.lineBreakMode = .byWordWrapping
-    emptyGame.textColor = .black
-    emptyGame.adjustsFontSizeToFitWidth = true
-    emptyGame.minimumScaleFactor = 0.5
-    emptyGame.baselineAdjustment = .alignCenters
-    emptyGame.text = "No game has been searched."
-    emptyGame.font = UIFont(name: "Roboto-Bold", size: 18)
+      }
+  func configureTableView() {
+    view.addSubview(tableView)
+    tableView.snp.makeConstraints { make in
+      make.top.equalTo(gameView.searchBar.snp.bottom)
+         make.leading.equalTo(0)
+         make.trailing.equalTo(0)
+         make.bottom.equalToSuperview().offset(-83)
 
-    emptyGame.snp.makeConstraints{ (make) in
-      make.top.equalTo(tableView).offset(37.5)
-      make.centerX.equalToSuperview()
+     }
+
+      tableView.separatorStyle = .none
+      tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
+//      tableView.tableFooterView = LoadingFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
 
     }
-
   }
-}

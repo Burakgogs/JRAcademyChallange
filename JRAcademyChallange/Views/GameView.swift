@@ -1,76 +1,151 @@
 //
-//  HomePageView.swift
+//  GameView.swift
 //  JRAcademyChallange
 //
-//  Created by Burak GÖĞÜŞ on 3.06.2023.
+//  Created by Burak GÖĞÜŞ on 5.06.2023.
 //
-
-import Foundation
+import UIKit
 import SnapKit
+import Foundation
+import Carbon
 
-final class GameView : UIViewController {
+class GameView: UIView, Component {
 
-  private let contentView: UIView = UIView()
-  private let gameTitle: UILabel = UILabel()
-  private let stackView = UIStackView()
+  let labelTitle: UILabel = UILabel()
+  let navigationBar = UINavigationBar()
+
+  let searchBar = UISearchBar()
+  let stackView = UIStackView()
+//  let tableView = UITableView()
+//  let emptyGame = UILabel()
 
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    configure()
+  init() {
+    super.init(frame: .zero)
+    setupViews()
+    setupConstraints()
+  }
+
+  // MARK: - Component
+
+    func render(in content: GameView) {
+
+        // Burada herhangi bir işlem yapmanıza gerek yok
+
+    }
+  
+    func referenceSize(in bounds: CGRect) -> CGSize? {
+
+        return CGSize(width: bounds.width, height: 100) // Replace 64 with the desired height value
+
+    }
+
+    func renderContent() -> GameView {
+
+        return self
+
+    }
+
+
+
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  func setupConstraints(){
+    navigationBar.snp.makeConstraints { make in
+      make.height.equalTo(140)
+      make.width.equalTo(375)
+      make.left.equalToSuperview()
+      make.top.equalToSuperview()
+      make.right.equalToSuperview()
+    }
+    labelTitle.snp.makeConstraints{ (make) in
+      make.top.equalTo(navigationBar).offset(90)
+      make.left.equalToSuperview().offset(16)
+      make.right.equalToSuperview().offset(250)
+      make.bottom.equalTo(navigationBar).offset(-9)
+      make.height.equalTo(41)
+      make.width.equalTo(109)
+
+    }
+    stackView.snp.makeConstraints{ (make) in
+      make.top.equalTo(navigationBar.snp.bottom).offset(2)
+      make.bottom.equalToSuperview().offset(-83)
+      make.leading.equalToSuperview()
+      make.trailing.equalToSuperview()
+    }
+    searchBar.snp.makeConstraints { make in
+
+    }
+//    emptyGame.snp.makeConstraints{ (make) in
+//      make.top.equalTo(tableView).offset(37.5)
+//      make.centerX.equalToSuperview()
+//
+//    }
 
   }
-  func configure() {
-    view.addSubview(stackView)
-    stackView.addSubview(contentView)
-    contentView.addSubview(gameTitle)
 
-    stackView.backgroundColor = .blue
-    contentView.backgroundColor = .white
+  func setupViews () {
+    self.addSubview(navigationBar)
+    navigationBar.addSubview(labelTitle)
+    self.addSubview(stackView)
+    stackView.addArrangedSubview(searchBar)
+//    stackView.addArrangedSubview(tableView)
+//    tableView.addSubview(emptyGame)
+
+
+
+
+    navigationBar.layer.cornerRadius = 0
+    navigationBar.tintColor = .white
+    navigationBar.topItem?.title = "Navigation Bar"
+    navigationBar.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 0.92)
+
+
+
+
+    labelTitle.textColor = .black
+    labelTitle.textAlignment = .left
+    labelTitle.numberOfLines = 0
+    labelTitle.lineBreakMode = .byWordWrapping
+    labelTitle.textColor = .black
+    labelTitle.adjustsFontSizeToFitWidth = true
+    labelTitle.minimumScaleFactor = 0.5
+    labelTitle.baselineAdjustment = .alignCenters
+    labelTitle.text = "Games"
+    labelTitle.font = UIFont(name: "Roboto-Bold", size: 34)
+
+
 
     stackView.axis = .vertical
     stackView.contentMode = .scaleToFill
     stackView.alignment = .fill
     stackView.spacing = 0
     stackView.distribution = .fill
+    stackView.backgroundColor = .gray
 
 
-    stackView.snp.makeConstraints{ (make) in
-      make.top.equalTo(100)
-      make.bottom.equalToSuperview().offset(-83)
-      make.leading.equalToSuperview()
-      make.trailing.equalToSuperview()
-    }
+    searchBar.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.92)
+    searchBar.layer.cornerRadius = 10
+    searchBar.placeholder = "Search for the games"
+    searchBar.searchTextField.font = UIFont.systemFont(ofSize: 17)
 
-    contentView.snp.makeConstraints{ (make) in
-      make.width.equalTo(136)
-      make.height.equalTo(375)
-      make.right.equalTo(0)
-      make.left.equalTo(0)
-      make.top.equalTo(120)
+//
+//
+//    emptyGame.textColor = .black
+//    emptyGame.textAlignment = .center
+//    emptyGame.numberOfLines = 0
+//    emptyGame.lineBreakMode = .byWordWrapping
+//    emptyGame.textColor = .black
+//    emptyGame.adjustsFontSizeToFitWidth = true
+//    emptyGame.minimumScaleFactor = 0.5
+//    emptyGame.baselineAdjustment = .alignCenters
+//    emptyGame.text = "No game has been searched."
+//    emptyGame.font = UIFont(name: "Roboto-Bold", size: 18)
 
-//      make.leading.equalToSuperview()
-//      make.trailing.equalToSuperview()
-    }
-
-    gameTitle.textColor = .black
-    gameTitle.textAlignment = .left
-    gameTitle.numberOfLines = 0
-    gameTitle.lineBreakMode = .byWordWrapping
-    gameTitle.textColor = .black
-    gameTitle.adjustsFontSizeToFitWidth = true
-    gameTitle.minimumScaleFactor = 0.5
-    gameTitle.baselineAdjustment = .alignCenters
-    gameTitle.text = "Favorites"
-    gameTitle.font = UIFont(name: "Roboto-Bold", size: 25)
-
-    gameTitle.snp.makeConstraints{ (make) in
-      make.top.equalTo(contentView).offset(16)
-      make.right.equalTo(contentView).offset(16)
-      make.left.equalTo(152)
-      make.bottom.equalTo(contentView).offset(94)
-    }
 
   }
+
 
 }

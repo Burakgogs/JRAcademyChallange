@@ -9,18 +9,19 @@ import Alamofire
 import Foundation
 
   protocol GameViewModelDelegate: AnyObject {
-    func didFetchGames(games: [Game])
+    func didFetchGames()
   }
 
   class GameViewModel {
       weak var delegate: GameViewModelDelegate?
-      private var games: [Game] = []
+      var games: [Game] = []
 
       func fetchGames() {
         AlamofireService.shared.requestGetGames { result in
                     switch result {
                     case .success(let games):
-                        self.delegate?.didFetchGames(games: games)
+                      self.games = games
+                        self.delegate?.didFetchGames()
                     case .failure(let error):
                         print("Error fetching games: \(error)")
                     }

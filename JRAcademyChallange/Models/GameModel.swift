@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+
 // MARK: - GameResponse
 struct Game: Codable, Identifiable {
     let id: Int?
@@ -16,11 +17,11 @@ struct Game: Codable, Identifiable {
     let rating: Double
 
     enum CodingKeys: String, CodingKey {
-      case id = "id"
-      case name = "name"
-      case released = "released"
-      case backgroundImage = "backgroundImage"
-      case rating = "rating"
+      case id
+      case name
+      case released
+      case backgroundImage = "background_image"
+      case rating
     }
 }
 
