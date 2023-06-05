@@ -22,7 +22,8 @@ struct GameItem : IdentifiableComponent{
   func render(in content: GameCell) {
     content.gameTitle.text = game.name
     content.metacritic.text = "metacritic:"
-    content.metaScore.text = String(game.metacritic)
+    if let metacritic = game.metacritic { content.metaScore.text = String(metacritic)}
+
     if let genres = game.genres {
         let genreNames = genres.compactMap { $0.name }
         if !genreNames.isEmpty {
@@ -32,15 +33,16 @@ struct GameItem : IdentifiableComponent{
           content.genreTitle.text = "N/A"
         }
       }
-
-    if let url = URL(string: game.gameImage) {
-      let resizeProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 104, height: 120))
+    if let gameImage = game.gameImage {
+      if let url = URL(string: gameImage) {
+      let resizeProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 120, height: 104))
       let imageLoadingOptions: KingfisherOptionsInfo = [
           .processor(resizeProcessor),
           .scaleFactor(UIScreen.main.scale),
           .transition(.fade(0.2)),
       ]
-      content.imageView.kf.setImage(with: url, options: imageLoadingOptions)
+        content.imageView.kf.setImage(with: url, options: imageLoadingOptions)
+      }
     }
   }
 
@@ -99,7 +101,8 @@ final class GameCell: UIView {
     metaScore.font = UIFont(name: "Roboto-Bold", size: 18)
     metaScore.textColor = UIColor(hex: "#D80000")
 
-    genreTitle.font = UIFont(name: "Roboto-Bold", size: 13)
+    genreTitle.font = UIFont.systemFont(ofSize: 13)  
+
     genreTitle.textColor = UIColor(hex: "#8A8A8F")
 
   }
@@ -113,30 +116,31 @@ final class GameCell: UIView {
       make.left.equalTo(152)
     }
     metacritic.snp.makeConstraints{ (make) in
-      make.top.equalToSuperview().offset(84)
+      make.top.equalTo(84)
       make.right.equalTo(-147)
       make.left.equalTo(152)
-      make.bottom.equalTo(genreTitle.snp.top).offset(8)
+//      make.bottom.equalTo(36)
+
     }
     metaScore.snp.makeConstraints{ (make) in
-      make.top.equalToSuperview().offset(84)
+      make.top.equalTo(metacritic)
       make.right.equalTo(-121)
       make.left.equalTo(228)
-      make.bottom.equalTo(genreTitle.snp.top).offset(8)
+      make.bottom.equalTo(metacritic)
     }
     genreTitle.snp.makeConstraints{ (make) in
-      make.top.equalToSuperview().offset(108)
+      make.top.equalTo(metacritic.snp.bottom).offset(8)
       make.right.equalTo(-16)
       make.left.equalTo(152)
-      make.bottom.equalToSuperview().offset(12)
+//      make.bottom.equalToSuperview().offset(12)
     }
     imageView.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(16)
       make.left.equalTo(16)
       make.right.equalTo(gameTitle.snp.left).offset(-16)
       make.bottom.equalToSuperview().offset(16)
-      make.height.equalTo(120)
-      make.width.equalTo(104)
+      make.height.equalTo(104)
+      make.width.equalTo(120)
     }
   }
 }

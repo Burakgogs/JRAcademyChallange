@@ -3,10 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "renderFindGame #1 () in GameViewController.searchBarSearchButtonClicked(_:):GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.findgames">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in GameViewController.render():GameViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "viewModel.games">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewController.searchBarSearchButtonClicked(_:):GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchText.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

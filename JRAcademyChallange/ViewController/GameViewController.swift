@@ -7,15 +7,22 @@
 import UIKit
 import Foundation
 import Carbon
-class GameViewController: UIViewController, GameViewModelDelegate {
-  private let tableView: UITableView = UITableView()
-
-
+class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDelegate {
+  func didFetchMoreGames() {
+   render()
+  }
+  func searchGame() {
+    render()
+  }
   func didFetchGames() {
     render()
   }
+  private let tableView: UITableView = UITableView()
 
-  var viewModel: GameViewModel!
+
+
+
+  var viewModel: GameViewModel = GameViewModel()
   let gameView = GameView()
 
     override func viewDidLoad() {
@@ -28,12 +35,15 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         make.leading.trailing.equalTo(0)
         make.height.equalTo(gameView.snp.height)
       }
-      viewModel = GameViewModel()
+     
       viewModel.delegate = self
       viewModel.fetchGames()
 
       renderer.target = tableView
       configureTableView()
+
+      gameView.searchBar.delegate = self
+
     }
 
   private let renderer = Renderer(
@@ -63,4 +73,71 @@ class GameViewController: UIViewController, GameViewModelDelegate {
 //      tableView.tableFooterView = LoadingFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
 
     }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+      if let searchText = searchBar.text {
+        let label = UILabel()
+        print("Search text: \(searchText)")
+        if searchText.count >= 3 {
+          viewModel.searchGames(text: searchText)
+          renderFindGame()
+
+          func renderFindGame() {
+            var cellNode: [CellNode] = []
+            for game in viewModel.findgames {
+              let gameNode = CellNode(GameItem(game:game))
+              cellNode.append(gameNode)
+            }
+            let gameSection = Section(id: "gameSection", cells: cellNode)
+            renderer.render(gameSection)
+          }
+        }else {
+            var cellNode: [CellNode] = []
+              let emptyNode = CellNode(EmptyItem())
+              cellNode.append(emptyNode)
+            let emptySection = Section(id: "gameSection", cells: cellNode)
+            renderer.render(emptySection)
+        }
+      }
+      searchBar.resignFirstResponder()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+      searchBar.text = ""
+      searchBar.resignFirstResponder()
+    }
+
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+      var cellNode: [CellNode] = []
+        let emptyNode = CellNode(EmptyItem())
+        cellNode.append(emptyNode)
+      let emptySection = Section(id: "gameSection2", cells: cellNode)
+      renderer.render(emptySection)
+    }
+
+  func searchbar(_ searchBar: UISearchBar) {
+      var cellNode: [CellNode] = []
+        let emptyNode = CellNode(EmptyItem())
+        cellNode.append(emptyNode)
+      let emptySection = Section(id: "gameSection2", cells: cellNode)
+      renderer.render(emptySection)
+    }
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    if  searchText.isEmpty{
+      viewModel.fetchGames()
+    }
   }
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          // Check if the tableView has scrolled to the bottom
+          let offsetY = scrollView.contentOffset.y
+          let contentHeight = scrollView.contentSize.height
+          let visibleHeight = scrollView.frame.height
+
+          if offsetY + visibleHeight >= contentHeight {
+              // TableView has scrolled to the bottom, fetch more games
+//            viewModel.fetchGetMoreGames(nextPage:viewmodel.)
+          }
+      }
+  
+}

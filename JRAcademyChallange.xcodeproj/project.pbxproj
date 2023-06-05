@@ -17,6 +17,7 @@
 		8E8AF9752A2919EB00BE3643 /* JRAcademyChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */; };
 		8E8AF9772A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */; };
 		8EC041D82A2DE08C0037F912 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041D72A2DE08C0037F912 /* GameView.swift */; };
+		8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041E12A2E71490037F912 /* EmptyView.swift */; };
 		8ED5FE482A2B7C9700CF3612 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */; };
 		8ED5FE492A2B7C9700CF3612 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */; };
 		8ED5FE4A2A2B7C9700CF3612 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */; };
@@ -68,6 +69,8 @@
 		8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITests.swift; sourceTree = "<group>"; };
 		8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8EC041D72A2DE08C0037F912 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		8EC041E02A2E69A40037F912 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		8EC041E12A2E71490037F912 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		8ED5FE442A2B7C5B00CF3612 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				8EC041E02A2E69A40037F912 /* Roboto-Thin.ttf */,
 				8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */,
 				8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */,
 				8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */,
@@ -249,6 +253,7 @@
 			children = (
 				8EEC21282A2AA9F200446937 /* GameCell.swift */,
 				8EC041D72A2DE08C0037F912 /* GameView.swift */,
+				8EC041E12A2E71490037F912 /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -509,6 +514,7 @@
 			files = (
 				8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */,
 				8ED5FE602A2C0DA300CF3612 /* FavoritesViewController.swift in Sources */,
+				8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */,
 				8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */,
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,
 				8EC041D82A2DE08C0037F912 /* GameView.swift in Sources */,

@@ -10,27 +10,46 @@ import Foundation
 
   protocol GameViewModelDelegate: AnyObject {
     func didFetchGames()
+    func searchGame()
+    func didFetchMoreGames()
   }
 
-  class GameViewModel {
-      weak var delegate: GameViewModelDelegate?
-      var games: [Game] = []
+class GameViewModel {
+  weak var delegate: GameViewModelDelegate?
+  var games: [Game] = []
+  var findgames: [Game] = []
 
-      func fetchGames() {
-        AlamofireService.shared.requestGetGames { result in
-                    switch result {
-                    case .success(let games):
-                      self.games = games
-                        self.delegate?.didFetchGames()
-                    case .failure(let error):
-                        print("Error fetching games: \(error)")
-                    }
-          }
+  func fetchGames() {
+    AlamofireService.shared.requestGetGames { result in
+      switch result {
+      case .success(let games):
+        self.games = games
+        self.delegate?.didFetchGames()
+      case .failure(let error):
+        print("Error fetching games: \(error)")
       }
-
-//      func getGame(at index: Int) -> Game? {
-//          guard index >= 0 && index < games.count else { return nil }
-//          return games[index]
-//      }
+    }
   }
-
+    func searchGames(text: String) {
+      AlamofireService.shared.requestGetGamesWithSearch(searchText: text) { result in
+        switch result {
+        case .success(let games):
+          self.games = games
+          self.delegate?.searchGame()
+        case .failure(let error):
+          print("Error fetching games: \(error)")
+        }
+      }
+    }
+  func fetchGetMoreGames(nextPage: String) {
+    AlamofireService.shared.requestGetGames { result in
+      switch result {
+      case .success(let games):
+        self.games = games
+        self.delegate?.didFetchMoreGames()
+      case .failure(let error):
+        print("Error fetching games: \(error)")
+      }
+    }
+  }
+}

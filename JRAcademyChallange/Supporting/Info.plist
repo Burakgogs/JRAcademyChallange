@@ -5,7 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Bold.ttf</string>
-		<string></string>
+		<string>Roboto-Thin.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

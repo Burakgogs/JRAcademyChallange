@@ -12,8 +12,8 @@ struct Game: Codable, Identifiable {
     let id: Int
     let name: String
     let genres: [Genre]?
-    let gameImage: String
-    let metacritic: Int
+    let gameImage: String?
+    let metacritic: Int?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -27,7 +27,8 @@ struct Game: Codable, Identifiable {
 
 // MARK: - GameResponse
 struct GameResponse: Codable {
-    let results: [Game]
+  let results: [Game]
+//  var nextGame: String = "next"
 }
 
 // MARK: - NetworkError
