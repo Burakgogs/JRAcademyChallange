@@ -9,26 +9,18 @@ import Foundation
 import SnapKit
 import Carbon
 import UIKit
-final class GameCell: UIView, Component {
-
-  //  private let contentView: UIView = UIView()
-  private let gameTitle: UILabel = UILabel()
-  //  private let stackView = UIStackView()
 
 
-  init(game: Game) {
-    super.init(frame: .zero)
-    setupViews(game:game)
-    setupConstraints()
-  }
+struct GameItem : IdentifiableComponent{
+  var title: String
+  var id: String {
+      title
+    }
 
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
   // MARK: - Component
-
   func render(in content: GameCell) {
-    // Burada herhangi bir işlem yapmanıza gerek yok
+    content.gameTitle.text = title
+
   }
 
   func referenceSize(in bounds: CGRect) -> CGSize? {
@@ -36,10 +28,31 @@ final class GameCell: UIView, Component {
   }
 
   func renderContent() -> GameCell {
-    return self
+    return GameCell()
+
   }
 
-  func setupViews (game: Game) {
+}
+
+final class GameCell: UIView{
+
+  //  private let contentView: UIView = UIView()
+  let gameTitle: UILabel = UILabel()
+  //  private let stackView = UIStackView()
+ 
+
+  override init(frame: CGRect){
+    super.init(frame: frame)
+    setupViews()
+    setupConstraints()
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+
+  func setupViews () {
     self.addSubview(gameTitle)
   
     gameTitle.textColor = .black
@@ -50,7 +63,7 @@ final class GameCell: UIView, Component {
     gameTitle.adjustsFontSizeToFitWidth = true
     gameTitle.minimumScaleFactor = 0.5
     gameTitle.baselineAdjustment = .alignCenters
-    gameTitle.text = game.name
+
     gameTitle.font = UIFont(name: "Roboto-Bold", size: 25)
   }
   func setupConstraints(){

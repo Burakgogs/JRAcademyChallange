@@ -22,7 +22,6 @@ class GameViewController: UIViewController, GameViewModelDelegate {
       super.viewDidLoad()
       view.backgroundColor = .white
 
-
       view.addSubview(gameView)
       gameView.snp.makeConstraints { make in
         make.top.equalTo(0)
@@ -45,19 +44,16 @@ class GameViewController: UIViewController, GameViewModelDelegate {
   )
 
   func render() {
-    var sections: [Section] = []
+
     var cellNode: [CellNode] = []
 
-    viewModel.games.forEach { game in
-          cellNode.append(CellNode(id: "gameSection", GameCell(game: game)))
-        }
-
+    for game in viewModel.games {
+      let gameNode = CellNode(GameItem(title: game.name))
+      cellNode.append(gameNode)
+    }
     let gameSection = Section(id: "gameSection", cells: cellNode)
-    sections.append(gameSection)
-    renderer.render(sections)
-
-
-      }
+    renderer.render(gameSection)
+  }
   func configureTableView() {
     view.addSubview(tableView)
     tableView.snp.makeConstraints { make in
@@ -65,7 +61,6 @@ class GameViewController: UIViewController, GameViewModelDelegate {
          make.leading.equalTo(0)
          make.trailing.equalTo(0)
          make.bottom.equalToSuperview().offset(-83)
-
      }
 
       tableView.separatorStyle = .none

@@ -28,9 +28,9 @@ import Foundation
           }
       }
 
-      func getGame(at index: Int) -> Game? {
-          guard index >= 0 && index < games.count else { return nil }
-          return games[index]
-      }
+//      func getGame(at index: Int) -> Game? {
+//          guard index >= 0 && index < games.count else { return nil }
+//          return games[index]
+//      }
   }
 

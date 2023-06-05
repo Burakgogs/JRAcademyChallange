@@ -7,29 +7,30 @@
 
 import Foundation
 import Alamofire
-
-// MARK: - GameResponse
+// MARK: - Game
 struct Game: Codable, Identifiable {
-    let id: Int?
-    let name: String?
+    let id: Int
+    let name: String
     let released: String?
     let backgroundImage: String?
     let rating: Double
 
     enum CodingKeys: String, CodingKey {
-      case id
-      case name
-      case released
-      case backgroundImage = "background_image"
-      case rating
+        case id
+        case name
+        case released
+        case backgroundImage = "background_image"
+        case rating
+
     }
 }
 
-// MARK: - Network Error
-struct NetworkError: Error {
-  let initialError: AFError
-}
-
+// MARK: - GameResponse
 struct GameResponse: Codable {
     let results: [Game]
+}
+
+// MARK: - NetworkError
+struct NetworkError: Error {
+    let initialError: Error
 }
