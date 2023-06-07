@@ -18,6 +18,11 @@
 		8E8AF9772A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */; };
 		8EC041D82A2DE08C0037F912 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041D72A2DE08C0037F912 /* GameView.swift */; };
 		8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041E12A2E71490037F912 /* EmptyView.swift */; };
+		8ED39E652A2F3769002700F0 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E642A2F3769002700F0 /* GameDetailView.swift */; };
+		8ED39E672A2F3A5A002700F0 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */; };
+		8ED39E692A2FEA22002700F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED39E682A2FEA22002700F0 /* CoreData.framework */; };
+		8ED39E6C2A2FEA63002700F0 /* JRAcademyChallange.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E6A2A2FEA63002700F0 /* JRAcademyChallange.xcdatamodeld */; };
+		8ED39E6E2A2FEB00002700F0 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E6D2A2FEB00002700F0 /* GameDetailModel.swift */; };
 		8ED5FE482A2B7C9700CF3612 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */; };
 		8ED5FE492A2B7C9700CF3612 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */; };
 		8ED5FE4A2A2B7C9700CF3612 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */; };
@@ -71,6 +76,11 @@
 		8EC041D72A2DE08C0037F912 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		8EC041E02A2E69A40037F912 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		8EC041E12A2E71490037F912 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		8ED39E642A2F3769002700F0 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		8ED39E682A2FEA22002700F0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8ED39E6B2A2FEA63002700F0 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		8ED39E6D2A2FEB00002700F0 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		8ED5FE452A2B7C9600CF3612 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -90,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0621E50E0348A697E33A6AD3 /* Pods_JRAcademyChallange.framework in Frameworks */,
+				8ED39E692A2FEA22002700F0 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +126,7 @@
 		7D91A2124C60FE2354A73383 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8ED39E682A2FEA22002700F0 /* CoreData.framework */,
 				129CF6E4F65F49399563A470 /* Pods_JRAcademyChallange.framework */,
 				2382D1191132C34A8F88C66A /* Pods_JRAcademyChallange_JRAcademyChallangeUITests.framework */,
 				724F92A9E7A7E53BEA37AA97 /* Pods_JRAcademyChallangeTests.framework */,
@@ -191,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				8EEC21172A2A92DB00446937 /* GameModel.swift */,
+				8ED39E6D2A2FEB00002700F0 /* GameDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +227,7 @@
 		8EEC21122A2A8B5B00446937 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8ED39E6A2A2FEA63002700F0 /* JRAcademyChallange.xcdatamodeld */,
 				8ED5FE442A2B7C5B00CF3612 /* Font */,
 				8E8AF95C2A2919EB00BE3643 /* Assets.xcassets */,
 				8E8AF95E2A2919EB00BE3643 /* LaunchScreen.storyboard */,
@@ -235,6 +249,7 @@
 				8EEC211C2A2A9A5900446937 /* MainViewController.swift */,
 				8ED5FE5D2A2C0D4B00CF3612 /* GameViewController.swift */,
 				8ED5FE5F2A2C0DA300CF3612 /* FavoritesViewController.swift */,
+				8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -254,6 +269,7 @@
 				8EEC21282A2AA9F200446937 /* GameCell.swift */,
 				8EC041D72A2DE08C0037F912 /* GameView.swift */,
 				8EC041E12A2E71490037F912 /* EmptyView.swift */,
+				8ED39E642A2F3769002700F0 /* GameDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -515,7 +531,9 @@
 				8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */,
 				8ED5FE602A2C0DA300CF3612 /* FavoritesViewController.swift in Sources */,
 				8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */,
+				8ED39E652A2F3769002700F0 /* GameDetailView.swift in Sources */,
 				8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */,
+				8ED39E6C2A2FEA63002700F0 /* JRAcademyChallange.xcdatamodeld in Sources */,
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,
 				8EC041D82A2DE08C0037F912 /* GameView.swift in Sources */,
 				8EEC21222A2A9F9100446937 /* AlamofireService.swift in Sources */,
@@ -523,6 +541,8 @@
 				8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */,
 				8EEC21292A2AA9F200446937 /* GameCell.swift in Sources */,
 				8E8AF9562A2919E900BE3643 /* SceneDelegate.swift in Sources */,
+				8ED39E672A2F3A5A002700F0 /* GameDetailViewController.swift in Sources */,
+				8ED39E6E2A2FEB00002700F0 /* GameDetailModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,6 +886,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8ED39E6A2A2FEA63002700F0 /* JRAcademyChallange.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8ED39E6B2A2FEA63002700F0 /* Data.xcdatamodel */,
+			);
+			currentVersion = 8ED39E6B2A2FEA63002700F0 /* Data.xcdatamodel */;
+			path = JRAcademyChallange.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8E8AF9482A2919E900BE3643 /* Project object */;
 }

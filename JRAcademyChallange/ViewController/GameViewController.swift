@@ -8,6 +8,8 @@ import UIKit
 import Foundation
 import Carbon
 class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDelegate {
+  func getDetailGames() {}
+  
   func didFetchMoreGames() {
    render()
   }
@@ -25,6 +27,7 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
   var viewModel: GameViewModel = GameViewModel()
   let gameView = GameView()
 
+  var cell: GameCell = GameCell()
     override func viewDidLoad() {
       super.viewDidLoad()
       view.backgroundColor = .white
@@ -77,7 +80,7 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
       if let searchText = searchBar.text {
-        let label = UILabel()
+       
         print("Search text: \(searchText)")
         if searchText.count >= 3 {
           viewModel.searchGames(text: searchText)

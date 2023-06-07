@@ -12,11 +12,13 @@ import Foundation
     func didFetchGames()
     func searchGame()
     func didFetchMoreGames()
+    func getDetailGames()
   }
 
 class GameViewModel {
   weak var delegate: GameViewModelDelegate?
   var games: [Game] = []
+  var gamesDetail: GameDetail?
   var findgames: [Game] = []
 
   func fetchGames() {
@@ -41,12 +43,12 @@ class GameViewModel {
         }
       }
     }
-  func fetchGetMoreGames(nextPage: String) {
-    AlamofireService.shared.requestGetGames { result in
+  func getDetailGames(gameID: Int) {
+    AlamofireService.shared.requestGetGamesDetail(gameID: gameID) { result in
       switch result {
       case .success(let games):
-        self.games = games
-        self.delegate?.didFetchMoreGames()
+        self.gamesDetail = games
+        self.delegate?.getDetailGames()
       case .failure(let error):
         print("Error fetching games: \(error)")
       }

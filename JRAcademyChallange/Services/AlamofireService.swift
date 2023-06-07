@@ -48,7 +48,6 @@ struct AlamofireService {
       var urlComponents = getUrlComponent()
       let searchQuery = URLQueryItem(name: "search", value: searchText)
       urlComponents.queryItems?.append(searchQuery)
-      print("AlamofireService --> \(urlComponents.url!.absoluteString) adresine istek atılıyor...")
 
       guard let url = urlComponents.url else {
           // Hata durumunda işlemleri yapabilirsiniz.
@@ -67,6 +66,30 @@ struct AlamofireService {
       }
   }
   
-  
+  func requestGetGamesDetail(gameID: Int, completion: @escaping (Result<GameDetail, Error>) -> Void) {
+    var urlComponents = URLComponents()
+    urlComponents.scheme = "https"
+    urlComponents.host = "api.rawg.io"
+    urlComponents.path = "/api/games/\(gameID)"
+    urlComponents.queryItems = [URLQueryItem(name: "key", value: "3be8af6ebf124ffe81d90f514e59856c")]
+    
+    print("AlamofireService --> \(urlComponents.url!.absoluteString) adresine istek atılıyor...")
+
+    guard let url = urlComponents.url else {
+      // Handle error
+      return
+    }
+
+    let request = self.getDefaultRequest(url: url.absoluteString, method: .get)
+
+    AF.request(request).responseDecodable(of: GameDetail.self) { response in
+      switch response.result {
+      case .success(let gameDetailResponse):
+        completion(.success(gameDetailResponse))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
 
 }

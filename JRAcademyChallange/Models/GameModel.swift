@@ -29,17 +29,10 @@ struct Game: Codable, Identifiable {
 struct GameResponse: Codable {
   let results: [Game]
 //  var nextGame: String = "next"
+//  ? işareti 
 }
 
 // MARK: - NetworkError
 struct NetworkError: Error {
     let initialError: Error
-}
-// MARK: - Genre
-
-struct Genre: Codable {
-  let name: String?
-  enum CodingKeys: String, CodingKey {
-    case name
-  }
 }
