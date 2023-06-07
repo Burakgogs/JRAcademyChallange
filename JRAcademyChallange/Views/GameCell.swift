@@ -17,12 +17,14 @@ protocol GameCellDelegate: AnyObject {
 
 struct GameItem: IdentifiableComponent {
     var game: Game
-    var id: String {
+
+  var id: String {
         game.name
     }
 
     // MARK: - Component
     func render(in content: GameCell) {
+        content.gameID = game.id
         content.gameTitle.text = game.name
         content.metacritic.text = "metacritic:"
         if let metacritic = game.metacritic {
@@ -71,7 +73,7 @@ final class GameCell: UIView {
 
   weak var delegate: GameCellDelegate?
     override init(frame: CGRect) {
-        self.gameID = 0
+      self.gameID = 0
         super.init(frame: frame)
         setupViews()
         setupConstraints()

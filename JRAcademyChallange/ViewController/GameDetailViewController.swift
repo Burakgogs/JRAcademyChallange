@@ -32,6 +32,30 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
       configureTableView()
       let shareButton = UIBarButtonItem(title: "Favourite", style: .plain, target: self, action: #selector(FavouriteButtonTapped))
           navigationItem.rightBarButtonItem = shareButton
+
+      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+          }
+          let managedContext = appDelegate.persistentContainer.viewContext
+          guard let entity = NSEntityDescription.entity(forEntityName: "Favourite", in: managedContext) else {
+            return
+          }
+      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
+
+      fetchRequest.predicate = NSPredicate(format: "gameid == %d", viewModel.gamesDetail?.id ?? 0 )
+
+      do {
+          let results = try managedContext.fetch(fetchRequest)
+
+          // Eğer sonuçlar boş değilse, oyun zaten favorilere eklenmiş demektir
+          if !results.isEmpty {
+            navigationItem.rightBarButtonItem?.title = "Favourited"
+              return
+          }
+
+      } catch let error as NSError {
+          print("Favori arama hatası: \(error), \(error.userInfo)")
+      }
     }
   @objc func FavouriteButtonTapped() {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -42,12 +66,13 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
           return
         }
         var combinedGenres: String?
-    if let genres = viewModel.gamesDetail?.genres {
+        if let genres = viewModel.gamesDetail?.genres {
           let genreNames = genres.compactMap { $0.name }
           combinedGenres = genreNames.joined(separator: ", ")
         }
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
-        fetchRequest.predicate = NSPredicate(format: "name == %@ AND image == %@ AND metacritic == %d AND genres == %@", viewModel.gamesDetail?.name ?? "", viewModel.gamesDetail?.backgroundImage ?? "", viewModel.gamesDetail?.metacritic ?? 0, combinedGenres ?? "")
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
+
+    fetchRequest.predicate = NSPredicate(format: "name == %@ AND image == %@ AND metacritic == %d AND genres == %@ AND gameid == %d", viewModel.gamesDetail?.name ?? "", viewModel.gamesDetail?.backgroundImage ?? "", viewModel.gamesDetail?.metacritic ?? 0, combinedGenres ?? "",viewModel.gamesDetail?.id ?? 0)
         do {
           let results = try managedContext.fetch(fetchRequest)
 
@@ -55,6 +80,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
           print("Favori arama hatası: \(error), \(error.userInfo)")
         }
         let favorite = NSManagedObject(entity: entity, insertInto: managedContext)
+        favorite.setValue(viewModel.gamesDetail?.id, forKey: "gameid")
         favorite.setValue(viewModel.gamesDetail?.name, forKey: "name")
         favorite.setValue(viewModel.gamesDetail?.backgroundImage, forKey: "image")
         favorite.setValue(viewModel.gamesDetail?.metacritic, forKey: "metacritic")

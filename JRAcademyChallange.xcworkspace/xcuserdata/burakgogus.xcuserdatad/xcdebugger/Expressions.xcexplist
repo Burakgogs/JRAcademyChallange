@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "GameViewController.searchBarSearchButtonClicked(_:):GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchText.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FavoritesViewController.renderFavorites():FavoritesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "genres">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "renderFindGame #1 () in GameViewController.searchBarSearchButtonClicked(_:):GameViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -15,14 +31,6 @@
          <PersistentStrings>
             <PersistentString
                value = "viewModel.games">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GameViewController.searchBarSearchButtonClicked(_:):GameViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "searchText.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

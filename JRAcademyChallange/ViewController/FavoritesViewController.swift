@@ -4,47 +4,49 @@
 //
 //  Created by Burak GÖĞÜŞ on 4.06.2023.
 //
+
 import UIKit
 import Foundation
+import Carbon
+import CoreData
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIViewController, GameViewModelDelegate {
+  func didFetchGames() {}
+
+  func searchGame() { }
+
+  func didFetchMoreGames() { }
+
+  func getDetailGames() {
+    renderFavorites()
+  }
+  private let tableView: UITableView = UITableView()
+
+ 
+  var gameID: Int?
   let labelTitle: UILabel = UILabel()
   let navigationBar = UINavigationBar()
 
-  let stackView = UIStackView()
-  let tableView = UITableView()
-  let emptyFavorite = UILabel()
-
   override func viewDidLoad() {
     super.viewDidLoad()
-
     view.backgroundColor = .white
-
-    configure()
-
-  }
-
-  func configure() {
 
     view.addSubview(navigationBar)
     navigationBar.addSubview(labelTitle)
-    view.addSubview(stackView)
-
-    stackView.addArrangedSubview(tableView)
-    tableView.addSubview(emptyFavorite)
-
+    view.addSubview(tableView)
+    setupConstraints()
+    //      tableView.addSubview(emptyFavorite)
+    setupUI()
+    renderer.target = tableView
+    configureTableView()
+    renderFavorites()
+  }
+  func setupUI(){
     navigationBar.layer.cornerRadius = 0
     navigationBar.tintColor = .white
     navigationBar.topItem?.title = "Navigation Bar"
     navigationBar.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 0.92)
 
-    navigationBar.snp.makeConstraints { make in
-              make.height.equalTo(140)
-              make.width.equalTo(375)
-              make.left.equalToSuperview()
-              make.top.equalToSuperview()
-              make.right.equalToSuperview()
-          }
 
 
     labelTitle.textColor = .black
@@ -57,48 +59,94 @@ class FavoritesViewController: UIViewController {
     labelTitle.baselineAdjustment = .alignCenters
     labelTitle.text = "Favorites"
     labelTitle.font = UIFont(name: "Roboto-Bold", size: 34)
-
+  }
+  func setupConstraints(){
     labelTitle.snp.makeConstraints{ (make) in
       make.top.equalTo(navigationBar).offset(90)
-      make.left.equalToSuperview().offset(16)
-      make.right.equalToSuperview().offset(250)
+      make.left.equalTo(16)
+      make.right.equalTo(250)
       make.bottom.equalTo(navigationBar).offset(-9)
       make.height.equalTo(41)
       make.width.equalTo(109)
-
     }
-    stackView.axis = .vertical
-    stackView.contentMode = .scaleToFill
-    stackView.alignment = .fill
-    stackView.spacing = 0
-    stackView.distribution = .fill
-    stackView.backgroundColor = .gray
-
-    stackView.snp.makeConstraints{ (make) in
-      make.top.equalTo(navigationBar.snp.bottom).offset(2)
-      make.bottom.equalToSuperview().offset(-83)
-      make.leading.equalToSuperview()
-      make.trailing.equalToSuperview()
-    }
-
-
-
-    emptyFavorite.textColor = .black
-    emptyFavorite.textAlignment = .center
-    emptyFavorite.numberOfLines = 0
-    emptyFavorite.lineBreakMode = .byWordWrapping
-    emptyFavorite.textColor = .black
-    emptyFavorite.adjustsFontSizeToFitWidth = true
-    emptyFavorite.minimumScaleFactor = 0.5
-    emptyFavorite.baselineAdjustment = .alignCenters
-    emptyFavorite.text = "No game has been searched."
-    emptyFavorite.font = UIFont(name: "Roboto-Bold", size: 18)
-
-    emptyFavorite.snp.makeConstraints{ (make) in
-      make.top.equalTo(tableView).offset(37.5)
-      make.centerX.equalToSuperview()
-
+    navigationBar.snp.makeConstraints { make in
+      make.height.equalTo(140)
+      make.width.equalTo(375)
+      make.left.equalToSuperview()
+      make.top.equalToSuperview()
+      make.right.equalToSuperview()
     }
 
   }
+
+  override func viewDidAppear(_ animated: Bool) {
+         super.viewDidAppear(animated)
+         renderFavorites()
+     }
+  private let renderer = Renderer(
+      adapter: UITableViewAdapter(),
+      updater: UITableViewUpdater()
+  )
+
+  func renderFavorites() {
+         var cellNode: [CellNode] = []
+
+         if let favorites = getFavourites() {
+             for favorite in favorites {
+               let genresString = favorite.value(forKey: "genres") as? String
+               let genresArray = genresString?.components(separatedBy: ",")
+               let genreObjects = genresArray?.compactMap {
+                 Genre(name: $0.trimmingCharacters(in: .whitespacesAndNewlines))
+               }
+                 if let name = favorite.value(forKey: "name") as? String,
+                    let image = favorite.value(forKey: "image") as? String,
+                    let gameID = favorite.value(forKey: "gameid") as? Int,
+                    let metacritic = favorite.value(forKey: "metacritic") as? Int {
+                    let game = Game(id: gameID, name: name, genres: genreObjects, gameImage: image, metacritic: metacritic)
+                    let gameNode = CellNode(GameItem(game: game))
+              
+                   cellNode.append(gameNode)
+                 }
+             }
+         }
+         let gameSection = Section(id: "gameSection", cells: cellNode)
+         renderer.render(gameSection)
+     }
+  func configureTableView() {
+
+    tableView.snp.makeConstraints { make in
+      make.top.equalTo(navigationBar.snp.bottom)
+         make.leading.equalTo(0)
+         make.trailing.equalTo(0)
+         make.bottom.equalToSuperview().offset(-83)
+     }
+      tableView.separatorStyle = .none
+      tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
+//      tableView.tableFooterView = LoadingFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+
+    }
+
+
+  func getFavourites() -> [NSManagedObject]? {
+      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+          return nil
+      }
+
+      let managedContext = appDelegate.persistentContainer.viewContext
+      let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourite")
+
+      do {
+          let results = try managedContext.fetch(fetchRequest)
+          return results
+      } catch let error as NSError {
+          print("Favori alınırken hata oluştu: \(error), \(error.userInfo)")
+          return nil
+      }
+  }
+
+
+
+
+
 }
+
