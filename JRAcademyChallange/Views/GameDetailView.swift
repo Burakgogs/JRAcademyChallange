@@ -33,13 +33,21 @@ struct GameDetailItem : IdentifiableComponent {
       ]
       content.gameImage.kf.setImage(with: url, options: imageLoadingOptions)
     }
-    content.gameDescription.text = gameDetail.description
+//    content.gameDescription.text = gameDetail.description
 
     if let urlReddit = gameDetail.redditUrl {
       content.redditURL = urlReddit
     }
     if let urlWeb = gameDetail.website {
       content.webURL = urlWeb
+    }
+    if let gamedecription = gameDetail.description {
+      let attributedText = NSMutableAttributedString(string: gamedecription)
+      let paragraphStyle = NSMutableParagraphStyle()
+      paragraphStyle.lineSpacing = 10
+      attributedText.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
+      content.gameDescription.attributedText = attributedText
+      content.gameDescription.lineBreakMode = .byTruncatingTail
     }
 
   }
@@ -64,6 +72,10 @@ final class GameDetailView: UIView {
   var gameDescriptionTitle: UILabel = UILabel()
   let website = UITextView()
   let reddit = UITextView()
+  let descriptionLineView = UIView()
+  let webLineView = UIView()
+  let redditLineView = UIView()
+
 
   override init(frame: CGRect){
     super.init(frame: frame)
@@ -85,7 +97,14 @@ final class GameDetailView: UIView {
     self.addSubview(gameTitle)
     self.addSubview(website)
     self.addSubview(reddit)
+    self.addSubview(redditLineView)
+    self.addSubview(descriptionLineView)
+    self.addSubview(webLineView)
 
+
+    descriptionLineView.backgroundColor = .lightGray
+    redditLineView.backgroundColor = .lightGray
+    webLineView.backgroundColor = .lightGray
 
     gameDescriptionTitle.font = UIFont(name: "Roboto-Bold", size: 17)
     gameDescriptionTitle.textAlignment = .left
@@ -101,9 +120,7 @@ final class GameDetailView: UIView {
     gameDescription.textAlignment = .left
     gameDescription.numberOfLines = 4
     gameDescription.translatesAutoresizingMaskIntoConstraints = false
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.lineSpacing = 4
-    gameDescription.numberOfLines = 4
+
 
     reddit.font =  UIFont.systemFont(ofSize: 17, weight: .light)
     reddit.textAlignment = .left
@@ -119,15 +136,16 @@ final class GameDetailView: UIView {
     website.isScrollEnabled = false
     website.isEditable = false
 
-
     website.text = "Visit website"
     if let urlWeb = webURL {
       let attributedString = NSMutableAttributedString(string: website.text!)
         attributedString.addAttribute(.link, value: urlWeb, range: NSRange(location: 0, length: website.text!.count))
         website.attributedText = attributedString
     }
+
     let tapWeb = UITapGestureRecognizer(target: self, action: #selector(openWebsite))
     website.addGestureRecognizer(tapWeb)
+
 
     reddit.text = "Visit reddit"
     if let urlReddit = redditURL {
@@ -153,26 +171,25 @@ final class GameDetailView: UIView {
       }
   }
     func setupConstraints() {
-      // Game Image constraints
+
       gameImage.snp.makeConstraints { make in
         make.top.left.right.equalToSuperview()
         make.height.equalTo(291)
         make.leading.trailing.equalTo(0)
       }
-      // Game Title constraints
+
       gameTitle.snp.makeConstraints { make in
         make.bottom.equalTo(gameImage.snp.bottom).offset(-16)
         make.left.equalToSuperview().offset(16)
         make.right.equalToSuperview().offset(-16)
       }
-      // Game Description constraints
+
       gameDescriptionTitle.snp.makeConstraints { make in
         make.top.equalTo(gameImage.snp.bottom).offset(16)
         make.left.equalToSuperview().offset(16)
         make.right.equalToSuperview().inset(16)
       }
 
-      // Game Description Title constraints
       gameDescription.snp.makeConstraints { make in
         make.top.equalTo(gameDescriptionTitle.snp.bottom).offset(8)
         make.left.equalToSuperview().offset(16)
@@ -180,22 +197,36 @@ final class GameDetailView: UIView {
         make.height.equalTo(81)
       }
 
-
-      // Visit Reddit constraints
       reddit.snp.makeConstraints { make in
-//        make.bottom.equalTo(16)
-        make.top.equalTo(gameDescription.snp.bottom).offset(16)
+        make.top.equalTo(descriptionLineView.snp.bottom).offset(16)
         make.left.equalToSuperview().offset(16)
         make.right.equalToSuperview().offset(16)
-
       }
 
-      // Visit Website constraints
       website.snp.makeConstraints { make in
         make.top.equalTo(reddit.snp.bottom).offset(33)
         make.left.equalTo(16)
-//        make.right.equalToSuperview().offset(16)
-//
+      }
+
+      descriptionLineView.snp.makeConstraints { make in
+        make.top.equalTo(gameDescription.snp.bottom).offset(16)
+        make.height.equalTo(0.5)
+        make.left.equalTo(16)
+        make.right.equalTo(0)
+      }
+
+      redditLineView.snp.makeConstraints { make in
+        make.top.equalTo(reddit.snp.bottom).offset(16)
+        make.height.equalTo(0.5)
+        make.left.equalTo(16)
+        make.right.equalTo(0)
+      }
+
+      webLineView.snp.makeConstraints { make in
+        make.top.equalTo(website.snp.bottom).offset(16)
+        make.height.equalTo(0.5)
+        make.left.equalTo(16)
+        make.right.equalTo(0)
       }
     }
   }

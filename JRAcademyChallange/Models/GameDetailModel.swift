@@ -12,7 +12,7 @@ struct GameDetail: Codable, Identifiable {
     let id: Int
     let name: String
     let backgroundImage: String?
-    let description : String
+    let description : String?
     let redditUrl: String?
     let website: String?
     let genres: [Genre]

@@ -27,7 +27,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
       super.viewDidLoad()
       view.backgroundColor = .white
       viewModel.delegate = self
-
+      tableView.isScrollEnabled = false
       renderer.target = tableView
       configureTableView()
       let shareButton = UIBarButtonItem(title: "Favourite", style: .plain, target: self, action: #selector(FavouriteButtonTapped))
@@ -39,7 +39,6 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: "Favourite", in: managedContext) else {
-          print("Hata: Favori varlığı bulunamadı.")
           return
         }
         var combinedGenres: String?
