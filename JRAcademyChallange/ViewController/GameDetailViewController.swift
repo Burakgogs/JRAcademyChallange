@@ -51,10 +51,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
         fetchRequest.predicate = NSPredicate(format: "name == %@ AND image == %@ AND metacritic == %d AND genres == %@", viewModel.gamesDetail?.name ?? "", viewModel.gamesDetail?.backgroundImage ?? "", viewModel.gamesDetail?.metacritic ?? 0, combinedGenres ?? "")
         do {
           let results = try managedContext.fetch(fetchRequest)
-//          if results.count > 0 {
-//            showAlert(message: "Bu oyun zaten favorilere eklenmiş.")
-//            return
-//          }
+
         } catch let error as NSError {
           print("Favori arama hatası: \(error), \(error.userInfo)")
         }
