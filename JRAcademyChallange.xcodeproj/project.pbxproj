@@ -19,6 +19,7 @@
 		8EC041D82A2DE08C0037F912 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041D72A2DE08C0037F912 /* GameView.swift */; };
 		8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041E12A2E71490037F912 /* EmptyView.swift */; };
 		8EC97E952A312CB000100301 /* FavouriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC97E942A312CB000100301 /* FavouriteModel.swift */; };
+		8EC97E982A313AA300100301 /* FavouriteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC97E972A313AA300100301 /* FavouriteAdapter.swift */; };
 		8ED39E652A2F3769002700F0 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E642A2F3769002700F0 /* GameDetailView.swift */; };
 		8ED39E672A2F3A5A002700F0 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */; };
 		8ED39E692A2FEA22002700F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED39E682A2FEA22002700F0 /* CoreData.framework */; };
@@ -28,7 +29,7 @@
 		8ED5FE492A2B7C9700CF3612 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */; };
 		8ED5FE4A2A2B7C9700CF3612 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */; };
 		8ED5FE5E2A2C0D4B00CF3612 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5FE5D2A2C0D4B00CF3612 /* GameViewController.swift */; };
-		8ED5FE602A2C0DA300CF3612 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5FE5F2A2C0DA300CF3612 /* FavoritesViewController.swift */; };
+		8ED5FE602A2C0DA300CF3612 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5FE5F2A2C0DA300CF3612 /* FavouritesViewController.swift */; };
 		8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21172A2A92DB00446937 /* GameModel.swift */; };
 		8EEC211A2A2A93AF00446937 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC21192A2A93AF00446937 /* GameViewModel.swift */; };
 		8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC211C2A2A9A5900446937 /* MainViewController.swift */; };
@@ -78,6 +79,7 @@
 		8EC041E02A2E69A40037F912 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		8EC041E12A2E71490037F912 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		8EC97E942A312CB000100301 /* FavouriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteModel.swift; sourceTree = "<group>"; };
+		8EC97E972A313AA300100301 /* FavouriteAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAdapter.swift; sourceTree = "<group>"; };
 		8ED39E642A2F3769002700F0 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
 		8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		8ED39E682A2FEA22002700F0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -87,7 +89,7 @@
 		8ED5FE462A2B7C9600CF3612 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		8ED5FE472A2B7C9700CF3612 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		8ED5FE5D2A2C0D4B00CF3612 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		8ED5FE5F2A2C0DA300CF3612 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8ED5FE5F2A2C0DA300CF3612 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		8EEC21172A2A92DB00446937 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		8EEC21192A2A93AF00446937 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		8EEC211C2A2A9A5900446937 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		8E8AF9522A2919E900BE3643 /* JRAcademyChallange */ = {
 			isa = PBXGroup;
 			children = (
+				8EC97E962A313A8200100301 /* Adapter */,
 				8EEC211B2A2A980800446937 /* App */,
 				8EEC210C2A2A8B0400446937 /* Models */,
 				8EEC21122A2A8B5B00446937 /* Resources */,
@@ -188,6 +191,14 @@
 				8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */,
 			);
 			path = JRAcademyChallangeUITests;
+			sourceTree = "<group>";
+		};
+		8EC97E962A313A8200100301 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				8EC97E972A313AA300100301 /* FavouriteAdapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 		8ED5FE442A2B7C5B00CF3612 /* Font */ = {
@@ -251,7 +262,7 @@
 			children = (
 				8EEC211C2A2A9A5900446937 /* MainViewController.swift */,
 				8ED5FE5D2A2C0D4B00CF3612 /* GameViewController.swift */,
-				8ED5FE5F2A2C0DA300CF3612 /* FavoritesViewController.swift */,
+				8ED5FE5F2A2C0DA300CF3612 /* FavouritesViewController.swift */,
 				8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */,
 			);
 			path = ViewController;
@@ -532,10 +543,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EEC211D2A2A9A5900446937 /* MainViewController.swift in Sources */,
-				8ED5FE602A2C0DA300CF3612 /* FavoritesViewController.swift in Sources */,
+				8ED5FE602A2C0DA300CF3612 /* FavouritesViewController.swift in Sources */,
 				8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */,
 				8ED39E652A2F3769002700F0 /* GameDetailView.swift in Sources */,
 				8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */,
+				8EC97E982A313AA300100301 /* FavouriteAdapter.swift in Sources */,
 				8EC97E952A312CB000100301 /* FavouriteModel.swift in Sources */,
 				8ED39E6C2A2FEA63002700F0 /* JRAcademyChallange.xcdatamodeld in Sources */,
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,

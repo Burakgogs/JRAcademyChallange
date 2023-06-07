@@ -10,27 +10,23 @@ import Foundation
 import Carbon
 import CoreData
 
-class FavoritesViewController: UIViewController, GameViewModelDelegate {
+class FavouritesViewController: UIViewController, GameViewModelDelegate {
   func didFetchGames() {}
-
   func searchGame() { }
-
   func didFetchMoreGames() { }
-
   func getDetailGames() {
     renderFavorites()
   }
   private let tableView: UITableView = UITableView()
-
- 
   var gameID: Int?
   let labelTitle: UILabel = UILabel()
   let navigationBar = UINavigationBar()
+  var favouritesGames: [Int] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
-
+    renderer.adapter.favouritesController = self
     view.addSubview(navigationBar)
     navigationBar.addSubview(labelTitle)
     view.addSubview(tableView)
@@ -46,8 +42,6 @@ class FavoritesViewController: UIViewController, GameViewModelDelegate {
     navigationBar.tintColor = .white
     navigationBar.topItem?.title = "Navigation Bar"
     navigationBar.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 0.92)
-
-
 
     labelTitle.textColor = .black
     labelTitle.textAlignment = .left
@@ -84,7 +78,7 @@ class FavoritesViewController: UIViewController, GameViewModelDelegate {
          renderFavorites()
      }
   private let renderer = Renderer(
-      adapter: UITableViewAdapter(),
+      adapter: FavouriteAdapter(),
       updater: UITableViewUpdater()
   )
 
@@ -104,7 +98,7 @@ class FavoritesViewController: UIViewController, GameViewModelDelegate {
                     let metacritic = favorite.value(forKey: "metacritic") as? Int {
                     let game = Game(id: gameID, name: name, genres: genreObjects, gameImage: image, metacritic: metacritic)
                     let gameNode = CellNode(GameItem(game: game))
-              
+                   favouritesGames.append(gameID)
                    cellNode.append(gameNode)
                  }
              }

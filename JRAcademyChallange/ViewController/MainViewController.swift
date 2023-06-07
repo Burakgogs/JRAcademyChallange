@@ -35,7 +35,7 @@ final class MainViewController: UIViewController {
           let tabOneVC = GameViewController()
           tabOneVC.tabBarItem = UITabBarItem(title: "Games", image:  UIImage(named: "GameIcon"), tag: 0)
 
-          let tabTwoVC = FavoritesViewController()
+          let tabTwoVC = FavouritesViewController()
           tabTwoVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "FavoriteIcon"), tag: 1)
 
           viewControllers = [tabOneVC, tabTwoVC]
