@@ -16,6 +16,7 @@
 		8E8AF96B2A2919EB00BE3643 /* JRAcademyChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF96A2A2919EB00BE3643 /* JRAcademyChallangeTests.swift */; };
 		8E8AF9752A2919EB00BE3643 /* JRAcademyChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */; };
 		8E8AF9772A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */; };
+		8EA970542A3276EF00BB2842 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA970532A3276EF00BB2842 /* LoadingCell.swift */; };
 		8EC041D82A2DE08C0037F912 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041D72A2DE08C0037F912 /* GameView.swift */; };
 		8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041E12A2E71490037F912 /* EmptyView.swift */; };
 		8EC97E952A312CB000100301 /* FavouriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC97E942A312CB000100301 /* FavouriteModel.swift */; };
@@ -76,6 +77,7 @@
 		8E8AF9702A2919EB00BE3643 /* JRAcademyChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JRAcademyChallangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8AF9742A2919EB00BE3643 /* JRAcademyChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITests.swift; sourceTree = "<group>"; };
 		8E8AF9762A2919EB00BE3643 /* JRAcademyChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRAcademyChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8EA970532A3276EF00BB2842 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		8EC041D72A2DE08C0037F912 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		8EC041E02A2E69A40037F912 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		8EC041E12A2E71490037F912 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				8EC041D72A2DE08C0037F912 /* GameView.swift */,
 				8EC041E12A2E71490037F912 /* EmptyView.swift */,
 				8ED39E642A2F3769002700F0 /* GameDetailView.swift */,
+				8EA970532A3276EF00BB2842 /* LoadingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				8E8AF9562A2919E900BE3643 /* SceneDelegate.swift in Sources */,
 				8ED39E672A2F3A5A002700F0 /* GameDetailViewController.swift in Sources */,
 				8ED39E6E2A2FEB00002700F0 /* GameDetailModel.swift in Sources */,
+				8EA970542A3276EF00BB2842 /* LoadingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

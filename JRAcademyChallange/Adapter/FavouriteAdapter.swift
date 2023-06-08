@@ -22,7 +22,7 @@ class FavouriteAdapter: UITableViewAdapter{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return
         }
-        let managedObjectContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let managedObjectContext: NSManagedObjectContext = appDelegate.persistentCheckContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
         fetchRequest.predicate = NSPredicate(format: "gameid == %d", favouritesController?.favouritesGames[indexPath.row] ?? "")
         do {
@@ -34,7 +34,7 @@ class FavouriteAdapter: UITableViewAdapter{
         } catch let error as NSError {
           print("Could not delete data: \(error), \(error.userInfo)")
         }
-        favouritesController?.renderFavorites()
+        favouritesController?.render()
         tableView.reloadData()
       }
     }

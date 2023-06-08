@@ -23,7 +23,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
 
   var viewModel: GameViewModel = GameViewModel()
   var gameID: Int?
-
+  var managedObjectContext: NSManagedObjectContext!
 
 
     override func viewDidLoad() {
@@ -34,12 +34,16 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
       tableView.isScrollEnabled = false
       renderer.target = tableView
       configureTableView()
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+              managedObjectContext = appDelegate.persistentContainer.viewContext
     }
 
-  override func viewDidDisappear(_ animated: Bool) {
+  override func viewWillDisappear(_ animated: Bool) {
     checkFavourites()
   }
+
+
   func checkFavourites(){
 
     let shareButton = UIBarButtonItem(title: "Favourite", style: .plain, target: self, action: #selector(FavouriteButtonTapped))
@@ -71,15 +75,33 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
           } catch {
               return true
           }
-
       }
   }
   @objc func FavouriteButtonTapped() {
-    
+
+    var isEmpty: Bool {
+
+          let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
+
+
+
+          do {
+
+              let count = try managedObjectContext.count(for: fetchRequest)
+
+              return count == 0
+
+          } catch {
+
+              return true
+
+          }
+
+      }
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return
         }
-    let managedContext = appDelegate.persistenChecktContainer.viewContext
+    let managedContext = appDelegate.persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: "Favourite", in: managedContext) else {
           return
         }
@@ -110,6 +132,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
           print("Favori kaydedilirken hata oluştu: \(error), \(error.userInfo)")
         }
       }
+
   func getDetailGame(gameID:Int) {
     viewModel.getDetailGames(gameID: gameID)
   }

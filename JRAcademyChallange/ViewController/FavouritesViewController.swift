@@ -15,29 +15,41 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
   func searchGame() { }
   func didFetchMoreGames() { }
   func getDetailGames() {
-    renderFavorites()
+    render()
   }
   private let tableView: UITableView = UITableView()
   var gameID: Int?
   let labelTitle: UILabel = UILabel()
   let navigationBar = UINavigationBar()
   var favouritesGames: [Int] = []
+  var managedObjectContext: NSManagedObjectContext!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
     renderer.adapter.favouritesController = self
+    setupUI()
+    configureTableView()
+    setupConstraints()
+    //      tableView.addSubview(emptyFavorite)
+    renderer.target = tableView
+    render()
+  
+  }
+  func setupUI(){
     view.addSubview(navigationBar)
     navigationBar.addSubview(labelTitle)
     view.addSubview(tableView)
-    setupConstraints()
-    //      tableView.addSubview(emptyFavorite)
-    setupUI()
-    renderer.target = tableView
-    configureTableView()
-    renderFavorites()
-  }
-  func setupUI(){
+
+    tableView.snp.makeConstraints { make in
+      make.top.equalTo(navigationBar.snp.bottom)
+         make.leading.equalTo(0)
+         make.trailing.equalTo(0)
+         make.bottom.equalToSuperview().offset(-83)
+     }
+      tableView.separatorStyle = .none
+      tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
+
     navigationBar.layer.cornerRadius = 0
     navigationBar.tintColor = .white
     navigationBar.topItem?.title = "Navigation Bar"
@@ -65,7 +77,7 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
     }
     navigationBar.snp.makeConstraints { make in
       make.height.equalTo(140)
-      make.width.equalTo(375)
+//      make.width.equalTo(375)
       make.left.equalToSuperview()
       make.top.equalToSuperview()
       make.right.equalToSuperview()
@@ -73,21 +85,24 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
 
   }
 
-  override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
          super.viewDidAppear(animated)
-         renderFavorites()
+         render()
      }
+
+
   private let renderer = Renderer(
       adapter: FavouriteAdapter(),
       updater: UITableViewUpdater()
   )
 
-  func renderFavorites() {
+  func render() {
 
     var cellNode: [CellNode] = []
 
 
     if let favorites = getFavourites() {
+
       if favorites.isEmpty{
         let emptyNode = CellNode(id: "EmptyCell",EmptyItem())
         cellNode.append(emptyNode)
@@ -102,27 +117,23 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
              let image = favorite.value(forKey: "image") as? String,
              let gameID = favorite.value(forKey: "gameid") as? Int,
              let metacritic = favorite.value(forKey: "metacritic") as? Int {
+
             let game = Game(id: gameID, name: name, genres: genreObjects, gameImage: image, metacritic: metacritic)
-            let gameNode = CellNode(GameItem(game: game))
+            let gameNode = CellNode(id: String(gameID), GameItem(game: game))
+            print("---------->",game)
             favouritesGames.append(gameID)
             cellNode.append(gameNode)
           }
         }
+        let gameSection = Section(id: "gameSection", cells: cellNode)
+        renderer.render(gameSection)
       }
-      let gameSection = Section(id: "gameSection", cells: cellNode)
-      renderer.render(gameSection)
+
     }
 }
   func configureTableView() {
 
-    tableView.snp.makeConstraints { make in
-      make.top.equalTo(navigationBar.snp.bottom)
-         make.leading.equalTo(0)
-         make.trailing.equalTo(0)
-         make.bottom.equalToSuperview().offset(-83)
-     }
-      tableView.separatorStyle = .none
-      tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
+
     }
 
 
@@ -131,7 +142,7 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
           return nil
       }
 
-      let managedContext = appDelegate.persistentContainer.viewContext
+      let managedContext = appDelegate.persistentCheckContainer.viewContext
       let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourite")
 
       do {

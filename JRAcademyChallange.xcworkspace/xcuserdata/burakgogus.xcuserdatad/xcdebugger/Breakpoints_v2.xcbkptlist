@@ -14,42 +14,169 @@
             filePath = "JRAcademyChallange/ViewController/FavouritesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "getDetailGames()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0605820D-CD5E-4F4F-9586-9094448FEA53 - 4137dad0496b8c0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouritesViewController.getDetailGames() -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "0605820D-CD5E-4F4F-9586-9094448FEA53 - 4137dad0496b8cc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouritesViewController.getDetailGames() -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "0605820D-CD5E-4F4F-9586-9094448FEA53 - 4137dad0496b8c28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouritesViewController.getDetailGames() -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "14F84E69-0C90-46BE-90F6-17A479604D9A"
+            uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JRAcademyChallange/ViewController/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "FavouriteButtonTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35 - ee3aac935a387185"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.GameDetailViewController.render() -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/GameDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35 - 48307b196acef084"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.GameDetailViewController.FavouriteButtonTapped() -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/GameDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "3454">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8B323B8-73DD-4919-B6A7-F1FDC0D85EE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JRAcademyChallange/ViewController/GameDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "checkFavourites()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0D2ADB3-F434-472C-A5BB-9A5D0BF126AF"
+            uuid = "243D62C0-905C-4B2D-827B-2F1CED1FE526"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JRAcademyChallange/ViewModels/GameViewModel.swift"
+            filePath = "JRAcademyChallange/ViewController/FavouritesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "fetchMoreGames(nextPage:)"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "getFavourites()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "243D62C0-905C-4B2D-827B-2F1CED1FE526 - d9c4fe2a7e8e284c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouritesViewController.getFavourites() -&gt; Swift.Optional&lt;Swift.Array&lt;__C.NSManagedObject&gt;&gt;"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "243D62C0-905C-4B2D-827B-2F1CED1FE526 - d9c4fe2a7e8e282d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouritesViewController.getFavourites() -&gt; Swift.Optional&lt;Swift.Array&lt;__C.NSManagedObject&gt;&gt;"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "380">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -39,7 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       })
       return container
     }()
-  lazy var persistenChecktContainer: NSPersistentContainer = {
+
+  lazy var persistentCheckContainer: NSPersistentContainer = {
 
       let container = NSPersistentContainer(name: "JRAcademyChallange")
       container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -50,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       })
       return container
     }()
-
   func saveContext () {
       let context = persistentContainer.viewContext
       if context.hasChanges {
