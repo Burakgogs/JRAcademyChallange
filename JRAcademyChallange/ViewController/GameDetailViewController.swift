@@ -22,41 +22,71 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
 
   var viewModel: GameViewModel = GameViewModel()
   var gameID: Int?
+  func deleteAllData() {
+      lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "JrAkademiGameProject")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+          if let error = error as NSError? {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+          }
+        })
+        return container
+      }()
+      let context = persistentContainer.viewContext
+      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorities")
+      do {
+        let results = try context.fetch(fetchRequest)
+        for object in results {
+          guard let objectData = object as? NSManagedObject else { continue }
+          context.delete(objectData)
+        }
+        try context.save()
+      } catch let error {
+        print("Error deleting data: \(error)")
+      }
+    }
+
 
     override func viewDidLoad() {
+      deleteAllData()
       super.viewDidLoad()
       view.backgroundColor = .white
       viewModel.delegate = self
       tableView.isScrollEnabled = false
       renderer.target = tableView
       configureTableView()
-      let shareButton = UIBarButtonItem(title: "Favourite", style: .plain, target: self, action: #selector(FavouriteButtonTapped))
-          navigationItem.rightBarButtonItem = shareButton
-
-      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-          }
-          let managedContext = appDelegate.persistentContainer.viewContext
-          guard let entity = NSEntityDescription.entity(forEntityName: "Favourite", in: managedContext) else {
-            return
-          }
-      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
-
-      fetchRequest.predicate = NSPredicate(format: "gameid == %d", viewModel.gamesDetail?.id ?? 0 )
-
-      do {
-          let results = try managedContext.fetch(fetchRequest)
-
-          // Eğer sonuçlar boş değilse, oyun zaten favorilere eklenmiş demektir
-          if !results.isEmpty {
-            navigationItem.rightBarButtonItem?.title = "Favourited"
-              return
-          }
-
-      } catch let error as NSError {
-          print("Favori arama hatası: \(error), \(error.userInfo)")
-      }
+      checkFavourites()
     }
+
+
+  func checkFavourites(){
+    var combinedGenres: String?
+    if let genres = viewModel.gamesDetail?.genres {
+      let genreNames = genres.compactMap { $0.name }
+      combinedGenres = genreNames.joined(separator: ", ")
+    }
+    let shareButton = UIBarButtonItem(title: "Favourite", style: .plain, target: self, action: #selector(FavouriteButtonTapped))
+        navigationItem.rightBarButtonItem = shareButton
+
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+          return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
+
+    fetchRequest.predicate = NSPredicate(format: "name == %@ AND image == %@ AND metacritic == %d AND genres == %@ AND gameid == %d", viewModel.gamesDetail?.name ?? "", viewModel.gamesDetail?.backgroundImage ?? "", viewModel.gamesDetail?.metacritic ?? 0, combinedGenres ?? "",viewModel.gamesDetail?.id ?? 0)
+    do {
+        let results = try managedContext.fetch(fetchRequest)
+
+      if !results.isEmpty {
+          navigationItem.rightBarButtonItem?.title = "Favourited"
+            return
+        }
+    } catch let error as NSError {
+        print("Favori eklenme hatası: \(error), \(error.userInfo)")
+    }
+  }
   @objc func FavouriteButtonTapped() {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return

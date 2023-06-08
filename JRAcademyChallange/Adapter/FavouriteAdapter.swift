@@ -16,6 +16,7 @@ class FavouriteAdapter: UITableViewAdapter{
 
     return true
   }
+  
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -23,12 +24,12 @@ class FavouriteAdapter: UITableViewAdapter{
       }
       let managedObjectContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
       let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
-
+      print(favouritesController?.favouritesGames[indexPath.row])
       fetchRequest.predicate = NSPredicate(format: "gameid == %d", favouritesController?.favouritesGames[indexPath.row] ?? "")
       
       do {
         let results = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
-        if let object = results.first {
+        if let object = results.last {
           managedObjectContext.delete(object)
           try managedObjectContext.save()
         }

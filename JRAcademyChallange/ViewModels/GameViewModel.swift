@@ -24,7 +24,7 @@ class GameViewModel {
   func fetchGames() {
     AlamofireService.shared.requestGetGames { result in
       switch result {
-      case .success(let games):
+      case .success((let games,_)):
         self.games = games
         self.delegate?.didFetchGames()
       case .failure(let error):

@@ -20,6 +20,7 @@
 		8EC041E22A2E71490037F912 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC041E12A2E71490037F912 /* EmptyView.swift */; };
 		8EC97E952A312CB000100301 /* FavouriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC97E942A312CB000100301 /* FavouriteModel.swift */; };
 		8EC97E982A313AA300100301 /* FavouriteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC97E972A313AA300100301 /* FavouriteAdapter.swift */; };
+		8EC97E9A2A314E7000100301 /* CustomAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC97E992A314E7000100301 /* CustomAdapter.swift */; };
 		8ED39E652A2F3769002700F0 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E642A2F3769002700F0 /* GameDetailView.swift */; };
 		8ED39E672A2F3A5A002700F0 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */; };
 		8ED39E692A2FEA22002700F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED39E682A2FEA22002700F0 /* CoreData.framework */; };
@@ -80,6 +81,7 @@
 		8EC041E12A2E71490037F912 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		8EC97E942A312CB000100301 /* FavouriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteModel.swift; sourceTree = "<group>"; };
 		8EC97E972A313AA300100301 /* FavouriteAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAdapter.swift; sourceTree = "<group>"; };
+		8EC97E992A314E7000100301 /* CustomAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAdapter.swift; sourceTree = "<group>"; };
 		8ED39E642A2F3769002700F0 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
 		8ED39E662A2F3A5A002700F0 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		8ED39E682A2FEA22002700F0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8EC97E972A313AA300100301 /* FavouriteAdapter.swift */,
+				8EC97E992A314E7000100301 /* CustomAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				8ED39E652A2F3769002700F0 /* GameDetailView.swift in Sources */,
 				8EEC21182A2A92DB00446937 /* GameModel.swift in Sources */,
 				8EC97E982A313AA300100301 /* FavouriteAdapter.swift in Sources */,
+				8EC97E9A2A314E7000100301 /* CustomAdapter.swift in Sources */,
 				8EC97E952A312CB000100301 /* FavouriteModel.swift in Sources */,
 				8ED39E6C2A2FEA63002700F0 /* JRAcademyChallange.xcdatamodeld in Sources */,
 				8E8AF9542A2919E900BE3643 /* AppDelegate.swift in Sources */,

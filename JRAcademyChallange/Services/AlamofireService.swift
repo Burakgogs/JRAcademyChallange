@@ -30,19 +30,20 @@ struct AlamofireService {
         return urlComponents
     }
 
-    func requestGetGames(completion: @escaping (Result<[Game], Error>) -> Void) {
-        let request = self.getDefaultRequest(url: getUrlComponent().url!.absoluteString, method: .get)
+  func requestGetGames(completion: @escaping (Result<([Game]), Error>) -> Void) {
+      let request = self.getDefaultRequest(url: getUrlComponent().url!.absoluteString, method: .get)
 
-        AF.request(request).responseDecodable(of: GameResponse.self) { response in
-            switch response.result {
-            case .success(let gameResponse):
-                completion(
-                  .success(gameResponse.results))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
+      AF.request(request).responseDecodable(of: GameResponse.self) { response in
+          switch response.result {
+          case .success(let gameResponse):
+//              completion(.success((gameResponse.results, gameResponse.next)))
+            completion(.success(gameResponse.results))
+          case .failure(let error):
+              completion(.failure(error))
+          }
+      }
+  }
+
 
   func requestGetGamesWithSearch(searchText: String, completion: @escaping (Result<[Game], Error>) -> Void) {
       var urlComponents = getUrlComponent()

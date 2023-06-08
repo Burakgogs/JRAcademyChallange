@@ -27,26 +27,11 @@ struct Game: Codable, Identifiable {
 
 // MARK: - GameResponse
 struct GameResponse: Codable {
-  let results: [Game]
-//  var nextGame: String = "next"
-//  ? işareti 
+    let results: [Game]
+//    var next: String?
 }
 
 // MARK: - NetworkError
 struct NetworkError: Error {
     let initialError: Error
 }
-//struct FavoriteGame: Codable {
-//    let name: String
-//    let genres: [Genre]?
-//    let gameImage: String?
-//    let metacritic: Int?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case name
-//        case gameImage = "background_image"
-//        case metacritic
-//        case genres
-//
-//    }
-//}

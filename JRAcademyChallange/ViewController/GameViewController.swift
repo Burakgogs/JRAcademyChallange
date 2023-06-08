@@ -38,13 +38,11 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
         make.leading.trailing.equalTo(0)
         make.height.equalTo(gameView.snp.height)
       }
-     
+
       viewModel.delegate = self
       viewModel.fetchGames()
-
       renderer.target = tableView
       configureTableView()
-
       gameView.searchBar.delegate = self
 
     }
@@ -74,7 +72,6 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
       tableView.separatorStyle = .none
       tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
 //      tableView.tableFooterView = LoadingFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
-
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
