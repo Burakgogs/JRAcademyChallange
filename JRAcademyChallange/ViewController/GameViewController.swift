@@ -103,12 +103,16 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
       searchBar.resignFirstResponder()
     }
 
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {//cancel butona tıkladığımda
       searchBar.text = ""
       searchBar.resignFirstResponder()
+      searchBar.showsCancelButton = false
+      viewModel.fetchGames()
+      didFetchGames()
     }
 
-  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {//Tıkladığım anda
+    searchBar.showsCancelButton = true
       var cellNode: [CellNode] = []
         let emptyNode = CellNode(EmptyItem())
         cellNode.append(emptyNode)
@@ -124,20 +128,11 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
       renderer.render(emptySection)
     }
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    if  searchText.isEmpty{
-      viewModel.fetchGames()
-    }
+//    searchBar.showsCancelButton = true
+//    if  searchText.isEmpty{
+//      viewModel.fetchGames()
+//    }
   }
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-          // Check if the tableView has scrolled to the bottom
-          let offsetY = scrollView.contentOffset.y
-          let contentHeight = scrollView.contentSize.height
-          let visibleHeight = scrollView.frame.height
-
-          if offsetY + visibleHeight >= contentHeight {
-              // TableView has scrolled to the bottom, fetch more games
-//            viewModel.fetchGetMoreGames(nextPage:viewmodel.)
-          }
-      }
   
+
 }

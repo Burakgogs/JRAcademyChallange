@@ -39,6 +39,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       })
       return container
     }()
+  lazy var persistenChecktContainer: NSPersistentContainer = {
+
+      let container = NSPersistentContainer(name: "JRAcademyChallange")
+      container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        if let error = error as NSError? {
+
+          fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
+      })
+      return container
+    }()
+
   func saveContext () {
       let context = persistentContainer.viewContext
       if context.hasChanges {

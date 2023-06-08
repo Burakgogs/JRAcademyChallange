@@ -29,7 +29,7 @@ class FavouriteAdapter: UITableViewAdapter{
       
       do {
         let results = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
-        if let object = results.last {
+        if let object = results.first {
           managedObjectContext.delete(object)
           try managedObjectContext.save()
         }

@@ -73,7 +73,7 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
 
   }
 
-  override func viewDidAppear(_ animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
          super.viewDidAppear(animated)
          renderFavorites()
      }

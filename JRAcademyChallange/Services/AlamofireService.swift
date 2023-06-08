@@ -25,7 +25,7 @@ struct AlamofireService {
         urlComponents.scheme = "https"
         urlComponents.host = "api.rawg.io"
         urlComponents.path = "/api/games"
-        urlComponents.queryItems = [URLQueryItem(name: "key", value: "3be8af6ebf124ffe81d90f514e59856c")]
+        urlComponents.queryItems = [URLQueryItem(name: "key", value: "99754714091e4d8d82257b2bd4825d84")]
 
         return urlComponents
     }
@@ -72,7 +72,7 @@ struct AlamofireService {
     urlComponents.scheme = "https"
     urlComponents.host = "api.rawg.io"
     urlComponents.path = "/api/games/\(gameID)"
-    urlComponents.queryItems = [URLQueryItem(name: "key", value: "3be8af6ebf124ffe81d90f514e59856c")]
+    urlComponents.queryItems = [URLQueryItem(name: "key", value: "99754714091e4d8d82257b2bd4825d84")]
     
     print("AlamofireService --> \(urlComponents.url!.absoluteString) adresine istek atılıyor...")
 

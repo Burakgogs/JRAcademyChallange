@@ -34,5 +34,21 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "GameDetailViewController.checkFavourites():GameDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.gamesDetail?.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameDetailViewController.FavouriteButtonTapped():GameDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
