@@ -7,69 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "50839D49-B3F9-49A3-B901-F1E275CA4EA2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JRAcademyChallange/Adapter/FavouriteAdapter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "tableView(_:commit:forRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "50839D49-B3F9-49A3-B901-F1E275CA4EA2 - 3455a0adbe54fb8e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "JRAcademyChallange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "2242">
-               </Location>
-               <Location
-                  uuid = "50839D49-B3F9-49A3-B901-F1E275CA4EA2 - 3455a0adbe54fb8e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "JRAcademyChallange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "2054">
-               </Location>
-               <Location
-                  uuid = "50839D49-B3F9-49A3-B901-F1E275CA4EA2 - 3455a0adbe54fb8e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "JRAcademyChallange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "2209">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0605820D-CD5E-4F4F-9586-9094448FEA53"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -96,6 +33,22 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "FavouriteButtonTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0D2ADB3-F434-472C-A5BB-9A5D0BF126AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JRAcademyChallange/ViewModels/GameViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "fetchMoreGames(nextPage:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -83,29 +83,36 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
   )
 
   func renderFavorites() {
-         var cellNode: [CellNode] = []
 
-         if let favorites = getFavourites() {
-             for favorite in favorites {
-               let genresString = favorite.value(forKey: "genres") as? String
-               let genresArray = genresString?.components(separatedBy: ",")
-               let genreObjects = genresArray?.compactMap {
-                 Genre(name: $0.trimmingCharacters(in: .whitespacesAndNewlines))
-               }
-                 if let name = favorite.value(forKey: "name") as? String,
-                    let image = favorite.value(forKey: "image") as? String,
-                    let gameID = favorite.value(forKey: "gameid") as? Int,
-                    let metacritic = favorite.value(forKey: "metacritic") as? Int {
-                    let game = Game(id: gameID, name: name, genres: genreObjects, gameImage: image, metacritic: metacritic)
-                    let gameNode = CellNode(GameItem(game: game))
-                   favouritesGames.append(gameID)
-                   cellNode.append(gameNode)
-                 }
-             }
-         }
-         let gameSection = Section(id: "gameSection", cells: cellNode)
-         renderer.render(gameSection)
-     }
+    var cellNode: [CellNode] = []
+
+
+    if let favorites = getFavourites() {
+      if favorites.isEmpty{
+        let emptyNode = CellNode(id: "EmptyCell",EmptyItem())
+        cellNode.append(emptyNode)
+      }else{
+        for favorite in favorites {
+          let genresString = favorite.value(forKey: "genres") as? String
+          let genresArray = genresString?.components(separatedBy: ",")
+          let genreObjects = genresArray?.compactMap {
+            Genre(name: $0.trimmingCharacters(in: .whitespacesAndNewlines))
+          }
+          if let name = favorite.value(forKey: "name") as? String,
+             let image = favorite.value(forKey: "image") as? String,
+             let gameID = favorite.value(forKey: "gameid") as? Int,
+             let metacritic = favorite.value(forKey: "metacritic") as? Int {
+            let game = Game(id: gameID, name: name, genres: genreObjects, gameImage: image, metacritic: metacritic)
+            let gameNode = CellNode(GameItem(game: game))
+            favouritesGames.append(gameID)
+            cellNode.append(gameNode)
+          }
+        }
+      }
+      let gameSection = Section(id: "gameSection", cells: cellNode)
+      renderer.render(gameSection)
+    }
+}
   func configureTableView() {
 
     tableView.snp.makeConstraints { make in
@@ -116,8 +123,6 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
      }
       tableView.separatorStyle = .none
       tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
-//      tableView.tableFooterView = LoadingFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
-
     }
 
 

@@ -27,8 +27,8 @@ struct Game: Codable, Identifiable {
 
 // MARK: - GameResponse
 struct GameResponse: Codable {
-    let results: [Game]
-//    var next: String?
+    var results: [Game]
+    var next: String?
 }
 
 // MARK: - NetworkError

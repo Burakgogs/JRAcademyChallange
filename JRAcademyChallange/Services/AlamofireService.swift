@@ -30,19 +30,21 @@ struct AlamofireService {
         return urlComponents
     }
 
-  func requestGetGames(completion: @escaping (Result<([Game]), Error>) -> Void) {
+
+  func requestGetGames(completion: @escaping (Result<([Game], String?), Error>) -> Void) {
       let request = self.getDefaultRequest(url: getUrlComponent().url!.absoluteString, method: .get)
 
       AF.request(request).responseDecodable(of: GameResponse.self) { response in
           switch response.result {
           case .success(let gameResponse):
-//              completion(.success((gameResponse.results, gameResponse.next)))
-            completion(.success(gameResponse.results))
+              completion(.success((gameResponse.results, gameResponse.next)))
           case .failure(let error):
               completion(.failure(error))
           }
       }
   }
+  
+
 
 
   func requestGetGamesWithSearch(searchText: String, completion: @escaping (Result<[Game], Error>) -> Void) {
@@ -50,10 +52,7 @@ struct AlamofireService {
       let searchQuery = URLQueryItem(name: "search", value: searchText)
       urlComponents.queryItems?.append(searchQuery)
 
-      guard let url = urlComponents.url else {
-          // Hata durumunda işlemleri yapabilirsiniz.
-          return
-      }
+      guard let url = urlComponents.url else {return}
 
       let request = self.getDefaultRequest(url: url.absoluteString, method: .get)
 
@@ -92,5 +91,34 @@ struct AlamofireService {
       }
     }
   }
+  func requestGetMoreGames(nextPage: String?, completion: @escaping (Result<([Game], String?), Error>) -> Void) {
+//      var urlComponents = URLComponents()
+//
+//      urlComponents.queryItems = nextPage
+
+//      print("AlamofireService NEXTTTT--> \(urlComponents.url!.absoluteString) adresine istek atılıyor...")
+
+//      guard let url = urlComponents.url else {
+//          // Handle error
+//          return
+//      }
+    if let nextPage = nextPage {
+      let request = self.getDefaultRequest(url: nextPage, method: .get)
+      AF.request(request).responseDecodable(of: GameResponse.self) { response in
+          switch response.result {
+          case .success(let gameResponse):
+              completion(.success((gameResponse.results, gameResponse.next)))
+          case .failure(let error):
+              completion(.failure(error))
+          }
+      }
+    }else {
+      print("Hatalı istek")
+    }
+
+
+  }
+
+
 
 }

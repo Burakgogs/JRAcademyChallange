@@ -22,8 +22,6 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
   private let tableView: UITableView = UITableView()
 
 
-
-
   var viewModel: GameViewModel = GameViewModel()
   let gameView = GameView()
 
@@ -44,23 +42,38 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
       renderer.target = tableView
       configureTableView()
       gameView.searchBar.delegate = self
+      NotificationCenter.default.addObserver(self, selector: #selector(getNextPage(notification:)), name: NSNotification.Name("getMoreGame"), object: nil)
 
     }
-
+  @objc func getNextPage(notification: Notification) {
+        if let nextPage = viewModel.nextPage {
+          if !viewModel.games.isEmpty {
+            viewModel.fetchMoreGames(nextPage:nextPage)
+          }
+        }
+    }
   private let renderer = Renderer(
-      adapter: UITableViewAdapter(),
+      adapter: CustomTableViewAdapter(),
       updater: UITableViewUpdater()
   )
 
   func render() {
     var cellNode: [CellNode] = []
-    for game in viewModel.games {
-      let gameNode = CellNode(GameItem(game:game))
-      cellNode.append(gameNode)
+
+    if viewModel.games.isEmpty {
+       let emptyNode = CellNode(id: "EmptyCell",EmptyItem())
+      cellNode.append(emptyNode)
+    } else {
+      for game in viewModel.games {
+        let gameNode = CellNode(id: "GameCell",GameItem(game:game))
+        cellNode.append(gameNode)
+      }
     }
     let gameSection = Section(id: "gameSection", cells: cellNode)
     renderer.render(gameSection)
   }
+
+
   func configureTableView() {
     view.addSubview(tableView)
     tableView.snp.makeConstraints { make in
@@ -71,33 +84,16 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
      }
       tableView.separatorStyle = .none
       tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
-//      tableView.tableFooterView = LoadingFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+      viewModel.games.removeAll()
 
       if let searchText = searchBar.text {
-       
+
         print("Search text: \(searchText)")
         if searchText.count >= 3 {
           viewModel.searchGames(text: searchText)
-          renderFindGame()
-
-          func renderFindGame() {
-            var cellNode: [CellNode] = []
-            for game in viewModel.findgames {
-              let gameNode = CellNode(GameItem(game:game))
-              cellNode.append(gameNode)
-            }
-            let gameSection = Section(id: "gameSection", cells: cellNode)
-            renderer.render(gameSection)
-          }
-        }else {
-            var cellNode: [CellNode] = []
-              let emptyNode = CellNode(EmptyItem())
-              cellNode.append(emptyNode)
-            let emptySection = Section(id: "gameSection", cells: cellNode)
-            renderer.render(emptySection)
         }
       }
       searchBar.resignFirstResponder()
@@ -107,31 +103,26 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
       searchBar.text = ""
       searchBar.resignFirstResponder()
       searchBar.showsCancelButton = false
+      viewModel.games.removeAll()
       viewModel.fetchGames()
       didFetchGames()
     }
 
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {//Tıkladığım anda
     searchBar.showsCancelButton = true
-      var cellNode: [CellNode] = []
-        let emptyNode = CellNode(EmptyItem())
-        cellNode.append(emptyNode)
-      let emptySection = Section(id: "gameSection2", cells: cellNode)
-      renderer.render(emptySection)
+    viewModel.games.removeAll()
+    render()
     }
 
   func searchbar(_ searchBar: UISearchBar) {
-      var cellNode: [CellNode] = []
-        let emptyNode = CellNode(EmptyItem())
-        cellNode.append(emptyNode)
-      let emptySection = Section(id: "gameSection2", cells: cellNode)
-      renderer.render(emptySection)
+    viewModel.games.removeAll()
+    render()
     }
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//    searchBar.showsCancelButton = true
-//    if  searchText.isEmpty{
-//      viewModel.fetchGames()
-//    }
+
+    
+
+
   }
   
 
