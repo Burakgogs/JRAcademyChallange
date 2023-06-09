@@ -53,7 +53,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return
         }
-        let checkManagedContext = appDelegate.persistentContainer.viewContext
+        var checkManagedContext = appDelegate.persistentContainer.viewContext
 
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
     fetchRequest.predicate = NSPredicate(format: "gameid == %d", viewModel.gamesDetail?.id ?? 0)
@@ -67,6 +67,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
     } catch let error as NSError {
         print("Favori eklenme hatası: \(error), \(error.userInfo)")
     }
+    render()
     var isEmpty: Bool {
 
           let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourite")
@@ -92,7 +93,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return
         }
-    let managedContext = appDelegate.persistentContainer.viewContext
+    var managedContext = appDelegate.persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: "Favourite", in: managedContext) else {
           return
         }

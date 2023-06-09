@@ -23,7 +23,7 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
   let navigationBar = UINavigationBar()
   var favouritesGames: [Int] = []
   var managedObjectContext: NSManagedObjectContext!
-
+  var deletedItem: [Game] = []
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
@@ -87,7 +87,7 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
-         render()
+//        getFavourites()
      }
 
 
@@ -106,7 +106,7 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
       if favorites.isEmpty{
         let emptyNode = CellNode(id: "EmptyCell",EmptyItem())
         cellNode.append(emptyNode)
-      }else{
+      }else {
         for favorite in favorites {
           let genresString = favorite.value(forKey: "genres") as? String
           let genresArray = genresString?.components(separatedBy: ",")
@@ -121,6 +121,8 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
             let game = Game(id: gameID, name: name, genres: genreObjects, gameImage: image, metacritic: metacritic)
             let gameNode = CellNode(id: String(gameID), GameItem(game: game))
             print("---------->",game)
+
+            deletedItem.append(game)
             favouritesGames.append(gameID)
             cellNode.append(gameNode)
           }
@@ -136,6 +138,25 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
 
     }
 
+
+//  func getFavourites() -> [NSManagedObject]? {
+//      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//          return nil
+//      }
+//
+//      var managedContext = appDelegate.persistentContainer.viewContext
+//      var fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourite")
+//
+//      do {
+//          let results = try managedContext.fetch(fetchRequest)
+//          return results
+//      } catch let error as NSError {
+//          print("Favori alınırken hata oluştu: \(error), \(error.userInfo)")
+//          return nil
+//      }
+//
+//  }
+//
 
   func getFavourites() -> [NSManagedObject]? {
       guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -153,8 +174,6 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
           return nil
       }
   }
-
-
 
 
 

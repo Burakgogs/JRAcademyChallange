@@ -29,17 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
   }
 
-  lazy var persistentContainer: NSPersistentContainer = {
-
-  let container = NSPersistentContainer(name: "JRAcademyChallange")
-  container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-  if let error = error as NSError? {
-    fatalError("Unresolved error \(error), \(error.userInfo)")
-
-  }
-  })
-    return container
-  }()
+//  lazy var persistentContainer: NSPersistentContainer = {
+//
+//  let container = NSPersistentContainer(name: "JRAcademyChallange")
+//  container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//  if let error = error as NSError? {
+//    fatalError("Unresolved error \(error), \(error.userInfo)")
+//
+//  }
+//  })
+//    return container
+//  }()
 
     func saveContext () {
       let context = persistentContainer.viewContext
@@ -52,6 +52,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
       }
     }
+  lazy var persistentContainer: NSPersistentContainer = {
+      let container = NSPersistentContainer(name: "JRAcademyChallange")
+
+      func resetPersistentContainer() {
+          container.persistentStoreDescriptions.forEach { description in
+              do {
+                guard let url = description.url else {return}
+                  try container.persistentStoreCoordinator.destroyPersistentStore(at: url, ofType: description.type, options: description.options)
+                  try container.persistentStoreCoordinator.addPersistentStore(ofType: description.type, configurationName: description.configuration, at: description.url, options: description.options)
+              } catch {
+                  fatalError("Persistent store reset error-------: \(error)")
+              }
+          }
+      }
+
+      container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+          if let error = error as NSError? {
+              print("Persistent store loading error: \(error), \(error.userInfo)")
+
+              // Hata durumunda persistentContainer'ı yeniden başlat
+              resetPersistentContainer()
+          }
+      })
+
+      return container
+  }()
+  
 
 }
 

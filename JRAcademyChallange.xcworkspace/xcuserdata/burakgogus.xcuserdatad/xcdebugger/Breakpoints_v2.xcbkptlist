@@ -77,8 +77,8 @@
             filePath = "JRAcademyChallange/ViewController/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "FavouriteButtonTapped()"
             landmarkType = "7">
             <Locations>
@@ -112,6 +112,21 @@
                   endingLineNumber = "114"
                   offsetFromSymbolStart = "3454">
                </Location>
+               <Location
+                  uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35 - 48307b196aceff8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.GameDetailViewController.FavouriteButtonTapped() -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/GameDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "3536">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -125,42 +140,10 @@
             filePath = "JRAcademyChallange/ViewController/FavouritesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "getFavourites()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "243D62C0-905C-4B2D-827B-2F1CED1FE526 - d9c4fe2a7e8e284c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JRAcademyChallange.FavouritesViewController.getFavourites() -&gt; Swift.Optional&lt;Swift.Array&lt;__C.NSManagedObject&gt;&gt;"
-                  moduleName = "JRAcademyChallange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/FavouritesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "380">
-               </Location>
-               <Location
-                  uuid = "243D62C0-905C-4B2D-827B-2F1CED1FE526 - d9c4fe2a7e8e282d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JRAcademyChallange.FavouritesViewController.getFavourites() -&gt; Swift.Optional&lt;Swift.Array&lt;__C.NSManagedObject&gt;&gt;"
-                  moduleName = "JRAcademyChallange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/FavouritesViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "380">
-               </Location>
-            </Locations>
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "FavouritesViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -177,6 +160,133 @@
             endingLineNumber = "21"
             landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B6CFBBC-328B-48D2-BE00-9EF50CBD43DB - 3455a0adbe54fd44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "6B6CFBBC-328B-48D2-BE00-9EF50CBD43DB - 3455a0adbe54fd44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "271">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E747634-97EE-4E0F-9D40-B4680C91CDFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JRAcademyChallange/ViewController/GameDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "checkFavourites()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0CF0E0FE-6ECC-4DE0-95E7-884EFB5B907B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JRAcademyChallange/Adapter/FavouriteAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34B22AC7-7C35-4B12-BDC2-3C1362AF9EEC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JRAcademyChallange/Adapter/FavouriteAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "34B22AC7-7C35-4B12-BDC2-3C1362AF9EEC - 3455a0adbe54fb54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1992">
+               </Location>
+               <Location
+                  uuid = "34B22AC7-7C35-4B12-BDC2-3C1362AF9EEC - 3455a0adbe54fb54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2495">
+               </Location>
+               <Location
+                  uuid = "34B22AC7-7C35-4B12-BDC2-3C1362AF9EEC - 1628190be2730d85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (JRAcademyChallange.Game) -&gt; Swift.Bool in JRAcademyChallange.FavouriteAdapter.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "JRAcademyChallange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/Adapter/FavouriteAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "125">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

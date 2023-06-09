@@ -35,7 +35,10 @@ class FavouriteAdapter: UITableViewAdapter{
         } catch let error as NSError {
           print("Could not delete data: \(error), \(error.userInfo)")
         }
-        favouritesController?.getFavourites()
+//        if let index = favouritesController?.deletedItem.firstIndex(where: { $0.id == favouritesController?.favouritesGames[indexPath.row] }) {
+//          favouritesController?.deletedItem.remove(at: index)
+//        }
+        favouritesController?.render()
         tableView.reloadData() // Update the table view after deletion
       }
     }
