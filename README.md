@@ -23,7 +23,7 @@ Proje aşağıdaki kütüphaneleri kullanmaktadır:
 
 !!!CHECK!!!
 
-Projenin son hali .gitattributes (LFS) izninden dolayı drive a yüklenmiştir aşağıdan ulaşabilirsiniz. .git dosyasını da drive a eklenmiştir. Commitlerimi görüntüleyebilirsiniz.
+Projenin son hali .gitattributes (LFS) izninden dolayı drive a yüklenmiştir aşağıdan ulaşabilirsiniz. .git dosyası da drive a eklenmiştir. Commitlerimi görüntüleyebilirsiniz.
 https://drive.google.com/drive/folders/1tmkOzr4L14JKIa9lcwu1JjO5uvSSjceW?usp=sharing  
 
 !!!CHECK!!!
