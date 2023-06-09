@@ -40,6 +40,7 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
     }
 
   override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     checkFavourites()
   }
 

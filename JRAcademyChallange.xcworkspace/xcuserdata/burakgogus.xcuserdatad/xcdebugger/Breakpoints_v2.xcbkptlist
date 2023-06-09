@@ -77,13 +77,13 @@
             filePath = "JRAcademyChallange/ViewController/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "FavouriteButtonTapped()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35 - 48307b196aceff52"
+                  uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35 - 48307b196aceffad"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,12 +93,12 @@
                   urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/GameDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "1421">
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "3971">
                </Location>
                <Location
-                  uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35 - 48307b196aceff52"
+                  uuid = "E6222426-1EE9-4FF7-A4E9-7EF901A06B35 - 48307b196aceffad"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -108,8 +108,8 @@
                   urlString = "file:///Users/burakgogus/JRAcademyChallange/JRAcademyChallange/ViewController/GameDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
                   offsetFromSymbolStart = "3454">
                </Location>
             </Locations>
