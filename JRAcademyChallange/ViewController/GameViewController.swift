@@ -24,7 +24,7 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
 
   var viewModel: GameViewModel = GameViewModel()
   let gameView = GameView()
-
+  var isTypingAllowed: Bool = true
   var cell: GameCell = GameCell()
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -119,11 +119,25 @@ class GameViewController: UIViewController, GameViewModelDelegate, UISearchBarDe
     render()
     }
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    viewModel.games.removeAll()
+    if !isTypingAllowed {
+                searchBar.text = searchText
+      if searchText.count >= 3 {
+        viewModel.searchGames(text: searchText)
+      }
 
-    
-
-
+     }
   }
-  
+  func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
+         if !isTypingAllowed {
+             return false
+         }
+         isTypingAllowed = false
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+             self.isTypingAllowed = true
+         }
+         return true
+     }
 
 }

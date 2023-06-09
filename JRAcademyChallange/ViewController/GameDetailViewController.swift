@@ -80,23 +80,13 @@ class GameDetailViewController: UIViewController, GameViewModelDelegate, UISearc
   @objc func FavouriteButtonTapped() {
 
     var isEmpty: Bool {
-
           let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
-
-
-
           do {
-
               let count = try managedObjectContext.count(for: fetchRequest)
-
               return count == 0
-
           } catch {
-
               return true
-
           }
-
       }
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return

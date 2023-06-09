@@ -142,7 +142,7 @@ class FavouritesViewController: UIViewController, GameViewModelDelegate {
           return nil
       }
 
-      let managedContext = appDelegate.persistentCheckContainer.viewContext
+      let managedContext = appDelegate.persistentContainer.viewContext
       let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourite")
 
       do {
